@@ -46,3 +46,7 @@ addons/*          # Игнорировать ВСЁ в папке addons...
 # Testing ignores
 test/
 tests/
+
+# Addons ignores
+
+addons/

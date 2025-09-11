@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://coq5vyyijty58"]
+
+[ext_resource type="PackedScene" uid="uid://m3jktqpimytm" path="res://player.tscn" id="1_vonw3"]
+[ext_resource type="PackedScene" uid="uid://byunb4axmthan" path="res://planet.tscn" id="2_oi3di"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_vonw3")]
+position = Vector2(306, 283)
+thrust_power = 200.0
+max_speed = 600.0
+friction = 0.999
+rotation_friction = 0.99
+
+[node name="Planet" parent="." instance=ExtResource("2_oi3di")]
+position = Vector2(700, 393)

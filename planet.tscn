@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://byunb4axmthan"]
+
+[ext_resource type="Script" uid="uid://grfachy38ud2" path="res://planet.gd" id="1_1odxm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtr83"]
+
+[sub_resource type="Gradient" id="Gradient_1odxm"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mtr83"]
+gradient = SubResource("Gradient_1odxm")
+
+[node name="Planet" type="Node2D"]
+script = ExtResource("1_1odxm")
+
+[node name="GravityField" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityField"]
+scale = Vector2(4.21, 4.21)
+shape = SubResource("CircleShape2D_mtr83")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1, 1)
+texture = SubResource("GradientTexture2D_mtr83")
+
+[connection signal="body_entered" from="GravityField" to="." method="_on_gravity_field_body_entered"]
+[connection signal="body_exited" from="GravityField" to="." method="_on_gravity_field_body_exited"]

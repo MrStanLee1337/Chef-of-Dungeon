@@ -15,5 +15,4 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var counter = get_tree().get_root().get_node("Level/Counter")
 		if counter:
-			get_parent().remove_child(self)
-			counter.add_child(self)
+			self.reparent(counter)

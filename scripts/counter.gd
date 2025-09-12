@@ -17,10 +17,11 @@ func has_vacant_spots() -> bool:
 
 func _on_child_entered_tree(node: Node) -> void:
 	if node is Card and node.get_parent() == self:
+		
+		await get_tree().process_frame
 		for slot in _myslots:
 			if slot.occupied():
 				continue
-			node.get_parent().remove_child(node)
-			slot.add_child(node)
+			node.reparent(slot)
 			return
 		print("Error: No vacant spots available in counter")

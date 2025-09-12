@@ -17,4 +17,5 @@ texture = ExtResource("2_ktuci")
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_kg30u")
 
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]

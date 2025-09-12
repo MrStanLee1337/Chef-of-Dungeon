@@ -9,15 +9,15 @@ script = ExtResource("1_8e5hq")
 [node name="SlotContainer" type="Node2D" parent="."]
 
 [node name="CardSlot" parent="SlotContainer" instance=ExtResource("1_sc7mx")]
-position = Vector2(68, 0)
+position = Vector2(216, 0)
 
 [node name="CardSlot2" parent="SlotContainer" instance=ExtResource("1_sc7mx")]
-position = Vector2(-204, 0)
+position = Vector2(-216, 0)
 
 [node name="CardSlot3" parent="SlotContainer" instance=ExtResource("1_sc7mx")]
-position = Vector2(204, 0)
+position = Vector2(72, 0)
 
 [node name="CardSlot4" parent="SlotContainer" instance=ExtResource("1_sc7mx")]
-position = Vector2(-68, 0)
+position = Vector2(-72, 0)
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

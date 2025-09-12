@@ -3,7 +3,10 @@ extends Node2D
 class_name CardSlot
 
 func occupied() -> bool:
-	return get_child_count() > 0
+	for child in get_children():
+		if child is Card:
+			return true
+	return false
 
 func _on_child_entered_tree(node: Node) -> void:
 	if node is Card:
@@ -11,3 +14,4 @@ func _on_child_entered_tree(node: Node) -> void:
 			print("Error: CardSlot already occupied")
 			return
 		(node as Card).position = Vector2.ZERO
+		print("child entered")

@@ -13,9 +13,9 @@ fill_from = Vector2(0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg30u"]
 size = Vector2(126, 192)
 
-[node name="Deck" type="Area2D" node_paths=PackedStringArray("myCardContainer")]
+[node name="Deck" type="Area2D" node_paths=PackedStringArray("_myCardContainer")]
 script = ExtResource("1_6rnap")
-myCardContainer = NodePath("CardContainer")
+_myCardContainer = NodePath("CardContainer")
 
 [node name="3DEffectSprite" type="Sprite2D" parent="."]
 position = Vector2(-1.84774e-06, 95.5)

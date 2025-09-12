@@ -1,16 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqnpinmupdpj5"]
+[gd_scene load_steps=5 format=3 uid="uid://cqnpinmupdpj5"]
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
-[ext_resource type="Script" uid="uid://58e2u2d36hmq" path="res://scripts/hand.gd" id="4_ppgk2"]
 
 [node name="Level" type="Node2D"]
 
-[node name="Deck" parent="." node_paths=PackedStringArray("targetCardContainer") instance=ExtResource("1_2q6dc")]
+[node name="Deck" parent="." node_paths=PackedStringArray("_targetCardContainer") instance=ExtResource("1_2q6dc")]
 position = Vector2(86, 496)
-targetCardContainer = NodePath("../Hand/CardContainer")
+_targetCardContainer = NodePath("../Hand/CardContainer")
 
 [node name="Card" parent="Deck/CardContainer" index="0" instance=ExtResource("2_mx8sn")]
 position = Vector2(401, 499)
@@ -38,7 +37,6 @@ position = Vector2(544, 500)
 
 [node name="Hand" parent="." instance=ExtResource("2_w7c3h")]
 position = Vector2(560, 502)
-script = ExtResource("4_ppgk2")
 
 [node name="Counter" parent="." instance=ExtResource("3_w8frs")]
 position = Vector2(637, 309)

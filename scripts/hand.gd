@@ -13,9 +13,10 @@ func _on_card_container_child_entered_tree(node: Node) -> void:
 		_myCards.append(node)
 		arrange_cards()
 
-func remove_card(card: Node) -> void:
-	_myCards.erase(card)
-	arrange_cards()
+func _on_card_container_child_exiting_tree(node: Node) -> void:
+	if node is Card:
+		_myCards.erase(node)
+		arrange_cards()
 
 func arrange_cards() -> void:
 	if _myCards.size() == 0:

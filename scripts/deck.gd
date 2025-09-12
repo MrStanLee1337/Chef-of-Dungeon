@@ -20,3 +20,4 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		_myCards.erase(card)
 		if _myCards.size() == 0:
 			self.queue_free()
+			

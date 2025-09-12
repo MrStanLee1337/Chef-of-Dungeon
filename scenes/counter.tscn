@@ -1,17 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq704ojvc2lv6"]
+[gd_scene load_steps=3 format=3 uid="uid://cq704ojvc2lv6"]
 
+[ext_resource type="Script" uid="uid://k32plbcgn5nc" path="res://scripts/counter.gd" id="1_8e5hq"]
 [ext_resource type="PackedScene" uid="uid://b5imltoqbcqdg" path="res://scenes/card_slot.tscn" id="1_sc7mx"]
 
 [node name="Counter" type="Node2D"]
+script = ExtResource("1_8e5hq")
 
-[node name="CardSlot" parent="." instance=ExtResource("1_sc7mx")]
+[node name="SlotContainer" type="Node2D" parent="."]
+
+[node name="CardSlot" parent="SlotContainer" instance=ExtResource("1_sc7mx")]
 position = Vector2(68, 0)
 
-[node name="CardSlot2" parent="." instance=ExtResource("1_sc7mx")]
+[node name="CardSlot2" parent="SlotContainer" instance=ExtResource("1_sc7mx")]
 position = Vector2(-204, 0)
 
-[node name="CardSlot3" parent="." instance=ExtResource("1_sc7mx")]
+[node name="CardSlot3" parent="SlotContainer" instance=ExtResource("1_sc7mx")]
 position = Vector2(204, 0)
 
-[node name="CardSlot4" parent="." instance=ExtResource("1_sc7mx")]
+[node name="CardSlot4" parent="SlotContainer" instance=ExtResource("1_sc7mx")]
 position = Vector2(-68, 0)
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

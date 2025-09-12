@@ -16,5 +16,8 @@ texture = SubResource("GradientTexture2D_eyfoh")
 region_enabled = true
 region_rect = Rect2(0, 0, 800, 200)
 script = ExtResource("1_eyfoh")
+_card_spacing = 90.0
 
 [node name="CardContainer" type="Node2D" parent="."]
+
+[connection signal="child_exiting_tree" from="CardContainer" to="." method="_on_card_container_child_exiting_tree"]

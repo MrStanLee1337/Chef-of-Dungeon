@@ -12,34 +12,19 @@ position = Vector2(86, 496)
 _targetCardContainer = NodePath("../Hand/CardContainer")
 
 [node name="Card" parent="Deck/CardContainer" index="0" instance=ExtResource("2_mx8sn")]
-position = Vector2(401, 499)
 
 [node name="Card2" parent="Deck/CardContainer" index="1" instance=ExtResource("2_mx8sn")]
-position = Vector2(685, 496)
 
 [node name="Card3" parent="Deck/CardContainer" index="2" instance=ExtResource("2_mx8sn")]
-position = Vector2(544, 500)
 
 [node name="Card4" parent="Deck/CardContainer" index="3" instance=ExtResource("2_mx8sn")]
-position = Vector2(544, 500)
-
-[node name="Card5" parent="Deck/CardContainer" index="4" instance=ExtResource("2_mx8sn")]
-position = Vector2(544, 500)
-
-[node name="Card6" parent="Deck/CardContainer" index="5" instance=ExtResource("2_mx8sn")]
-position = Vector2(544, 500)
-
-[node name="Card7" parent="Deck/CardContainer" index="6" instance=ExtResource("2_mx8sn")]
-position = Vector2(544, 500)
-
-[node name="Card8" parent="Deck/CardContainer" index="7" instance=ExtResource("2_mx8sn")]
-position = Vector2(544, 500)
+position = Vector2(86, 496)
 
 [node name="Hand" parent="." instance=ExtResource("2_w7c3h")]
 position = Vector2(560, 502)
 
 [node name="Counter" parent="." instance=ExtResource("3_w8frs")]
-position = Vector2(637, 309)
+position = Vector2(571, 300)
 
 [connection signal="child_entered_tree" from="Hand/CardContainer" to="Hand" method="_on_card_container_child_entered_tree"]
 

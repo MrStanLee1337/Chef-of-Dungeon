@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5dwb35otfa33"]
+
+[ext_resource type="Script" uid="uid://do48oh0tmy3ed" path="res://scripts/map_graph_node.gd" id="1_ix3cq"]
+[ext_resource type="Texture2D" uid="uid://bhjxm6e63ndpa" path="res://assets/sprites/32463.png" id="2_7eh4k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mg02n"]
+radius = 28.1603
+
+[node name="MapGraphNode" type="Node2D"]
+script = ExtResource("1_ix3cq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.108, 0.108)
+texture = ExtResource("2_7eh4k")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+shape = SubResource("CircleShape2D_mg02n")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -51.0
+offset_right = 20.0
+offset_bottom = -28.0
+text = "1"
+horizontal_alignment = 1
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0egkkhev4xp7"]
+
+[ext_resource type="PackedScene" uid="uid://c5dwb35otfa33" path="res://scenes/map_graph_node.tscn" id="1_4xfga"]
+[ext_resource type="PackedScene" uid="uid://ch38k4kjdm114" path="res://scenes/player_pawn.tscn" id="2_paxxb"]
+
+[node name="Map" type="Node2D"]
+
+[node name="Graph" type="Node2D" parent="."]
+
+[node name="MapGraphNode1" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
+position = Vector2(174, 327)
+connected_nodes = [NodePath("../MapGraphNode2"), NodePath("../MapGraphNode3")]
+
+[node name="MapGraphNode2" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
+position = Vector2(398, 205)
+connected_nodes = [NodePath("../MapGraphNode4")]
+
+[node name="MapGraphNode3" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
+position = Vector2(427, 468)
+connected_nodes = [NodePath("../MapGraphNode4")]
+
+[node name="MapGraphNode4" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
+position = Vector2(685, 338)
+connected_nodes = [NodePath("../MapGraphNode5"), NodePath("../MapGraphNode6"), NodePath("../MapGraphNode7")]
+
+[node name="MapGraphNode5" parent="Graph" instance=ExtResource("1_4xfga")]
+position = Vector2(874, 182)
+
+[node name="MapGraphNode6" parent="Graph" instance=ExtResource("1_4xfga")]
+position = Vector2(891, 342)
+
+[node name="MapGraphNode7" parent="Graph" instance=ExtResource("1_4xfga")]
+position = Vector2(909, 504)
+
+[node name="PlayerPawn" parent="." node_paths=PackedStringArray("current_node") instance=ExtResource("2_paxxb")]
+position = Vector2(-123, 86)
+current_node = NodePath("../Graph/MapGraphNode1")

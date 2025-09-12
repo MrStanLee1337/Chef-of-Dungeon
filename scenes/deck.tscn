@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://wtmclxrux87h"]
+
+[ext_resource type="Script" uid="uid://d1h5ltjsxoe7l" path="res://scripts/deck.gd" id="1_6rnap"]
+[ext_resource type="Texture2D" uid="uid://d3hw216775paa" path="res://assets/sprites/cardback.png" id="2_6rnap"]
+
+[sub_resource type="Gradient" id="Gradient_ktuci"]
+colors = PackedColorArray(0.360784, 0, 0, 1, 0.360784, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gdbsr"]
+gradient = SubResource("Gradient_ktuci")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kg30u"]
+size = Vector2(126, 192)
+
+[node name="Deck" type="Area2D" node_paths=PackedStringArray("myCardContainer")]
+script = ExtResource("1_6rnap")
+myCardContainer = NodePath("CardContainer")
+
+[node name="3DEffectSprite" type="Sprite2D" parent="."]
+position = Vector2(-1.84774e-06, 95.5)
+scale = Vector2(1.9375, 0.265625)
+texture = SubResource("GradientTexture2D_gdbsr")
+
+[node name="MainSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6rnap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_kg30u")
+
+[node name="CardContainer" type="Node" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

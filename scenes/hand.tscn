@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://2kkqbb4kxrwm"]
+
+[sub_resource type="Gradient" id="Gradient_1gd3j"]
+colors = PackedColorArray(0.147672, 0.147672, 0.147672, 1, 0.223103, 0.223103, 0.223103, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eyfoh"]
+gradient = SubResource("Gradient_1gd3j")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
+
+[node name="Hand" type="Sprite2D"]
+texture = SubResource("GradientTexture2D_eyfoh")
+region_enabled = true
+region_rect = Rect2(0, 0, 800, 200)
+
+[node name="CardContainer" type="Node2D" parent="."]

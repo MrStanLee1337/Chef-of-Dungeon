@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqnpinmupdpj5"]
+
+[ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="2_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Deck" parent="." node_paths=PackedStringArray("targetCardContainer") instance=ExtResource("1_2q6dc")]
+position = Vector2(86, 496)
+targetCardContainer = NodePath("../Hand/CardContainer")
+
+[node name="3DEffectSprite" parent="Deck" index="0"]
+position = Vector2(-1.84774e-06, 95.5)
+scale = Vector2(1.9375, 0.265625)
+
+[node name="Card" parent="Deck/CardContainer" index="0" instance=ExtResource("2_mx8sn")]
+position = Vector2(401, 499)
+
+[node name="Card2" parent="Deck/CardContainer" index="1" instance=ExtResource("2_mx8sn")]
+position = Vector2(685, 496)
+
+[node name="Card3" parent="Deck/CardContainer" index="2" instance=ExtResource("2_mx8sn")]
+position = Vector2(544, 500)
+
+[node name="Hand" parent="." instance=ExtResource("2_w7c3h")]
+position = Vector2(560, 502)
+
+[node name="Counter" parent="." instance=ExtResource("3_w8frs")]
+position = Vector2(637, 309)
+
+[editable path="Deck"]
+[editable path="Hand"]

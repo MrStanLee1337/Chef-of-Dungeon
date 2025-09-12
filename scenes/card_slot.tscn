@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5imltoqbcqdg"]
+
+[sub_resource type="Gradient" id="Gradient_fpilx"]
+colors = PackedColorArray(0.180005, 0.180005, 0.180005, 1, 0.122252, 0.122252, 0.122252, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mxh2e"]
+gradient = SubResource("Gradient_fpilx")
+
+[node name="CardSlot" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_mxh2e")
+region_enabled = true
+region_rect = Rect2(0, 0, 130, 180)

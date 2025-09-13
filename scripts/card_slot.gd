@@ -10,8 +10,4 @@ func occupied() -> bool:
 
 func _on_child_entered_tree(node: Node) -> void:
 	if node is Card:
-		if occupied():
-			print("Error: CardSlot already occupied")
-			return
 		(node as Card).position = Vector2.ZERO
-		print("child entered")

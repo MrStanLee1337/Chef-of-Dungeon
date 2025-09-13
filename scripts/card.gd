@@ -14,5 +14,6 @@ func get_hidden_in_deck() -> bool:
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var counter = get_tree().get_root().get_node("Level/Counter")
-		self.get_parent().remove_child(self)
-		counter.add_child(self)
+		if counter.has_vacant_spots():
+			self.get_parent().remove_child(self)
+			counter.add_child(self)

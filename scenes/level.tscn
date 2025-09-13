@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqnpinmupdpj5"]
+[gd_scene load_steps=7 format=3 uid="uid://cqnpinmupdpj5"]
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://cgioh8p6q6x4t" path="res://scenes/cards/SampleCard.tscn" id="3_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://c6rlp3ldo5hpv" path="res://scenes/cards/SampleCard2.tscn" id="4_2r41h"]
 
 [node name="Level" type="Node2D"]
 
@@ -19,6 +21,15 @@ _targetCardContainer = NodePath("../Hand/CardContainer")
 
 [node name="Card4" parent="Deck/CardContainer" index="3" instance=ExtResource("2_mx8sn")]
 position = Vector2(86, 496)
+
+[node name="SampleCard" parent="Deck/CardContainer" index="4" instance=ExtResource("3_ppgk2")]
+
+[node name="SampleCard2" parent="Deck/CardContainer" index="5" instance=ExtResource("3_ppgk2")]
+
+[node name="SampleCard3" parent="Deck/CardContainer" index="6" instance=ExtResource("4_2r41h")]
+position = Vector2(86, 496)
+
+[node name="SampleCard4" parent="Deck/CardContainer" index="7" instance=ExtResource("4_2r41h")]
 
 [node name="Hand" parent="." instance=ExtResource("2_w7c3h")]
 position = Vector2(560, 502)

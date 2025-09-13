@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bba5b35g84ot8"]
+
+[ext_resource type="Script" uid="uid://8jdign51hmqa" path="res://scripts/guest.gd" id="1_my1ra"]
+[ext_resource type="Texture2D" uid="uid://c4a1j04m7q558" path="res://assets/sprites/guest_avatar.png" id="2_21oj1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kg30u"]
+size = Vector2(124, 175)
+
+[node name="Guest" type="Area2D" node_paths=PackedStringArray("mySprite")]
+script = ExtResource("1_my1ra")
+mySprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_kg30u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_21oj1")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

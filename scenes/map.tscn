@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0egkkhev4xp7"]
+[gd_scene load_steps=3 format=3 uid="uid://cuonfkdkpxmw1"]
 
-[ext_resource type="PackedScene" uid="uid://c5dwb35otfa33" path="res://scenes/map_graph_node.tscn" id="1_4xfga"]
-[ext_resource type="PackedScene" uid="uid://ch38k4kjdm114" path="res://scenes/player_pawn.tscn" id="2_paxxb"]
+[ext_resource type="PackedScene" uid="uid://b1g36ilt3a7my" path="res://scenes/map_graph_node.tscn" id="1_4xfga"]
+[ext_resource type="PackedScene" path="res://scenes/player_pawn.tscn" id="2_paxxb"]
 
 [node name="Map" type="Node2D"]
 

@@ -1,41 +1,46 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqnpinmupdpj5"]
+[gd_scene load_steps=8 format=3 uid="uid://cqnpinmupdpj5"]
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://7lppxslj5h8" path="res://scenes/level_manager.tscn" id="1_2r41h"]
+[ext_resource type="Script" uid="uid://ckgkpo46h3ioy" path="res://scripts/level_manager.gd" id="2_klq6b"]
 [ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
-[ext_resource type="PackedScene" uid="uid://cgioh8p6q6x4t" path="res://scenes/cards/SampleCard.tscn" id="3_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
-[ext_resource type="PackedScene" uid="uid://c6rlp3ldo5hpv" path="res://scenes/cards/SampleCard2.tscn" id="4_2r41h"]
+[ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="5_ppgk2"]
 
 [node name="Level" type="Node2D"]
 
+[node name="LevelManager" parent="." instance=ExtResource("1_2r41h")]
+script = ExtResource("2_klq6b")
+
 [node name="Deck" parent="." node_paths=PackedStringArray("_targetCardContainer") instance=ExtResource("1_2q6dc")]
-position = Vector2(86, 496)
+position = Vector2(86, 540)
 _targetCardContainer = NodePath("../Hand/CardContainer")
 
 [node name="Card" parent="Deck/CardContainer" index="0" instance=ExtResource("2_mx8sn")]
+visible = false
 
 [node name="Card2" parent="Deck/CardContainer" index="1" instance=ExtResource("2_mx8sn")]
+visible = false
 
 [node name="Card3" parent="Deck/CardContainer" index="2" instance=ExtResource("2_mx8sn")]
+visible = false
 
 [node name="Card4" parent="Deck/CardContainer" index="3" instance=ExtResource("2_mx8sn")]
-position = Vector2(86, 496)
-
-[node name="SampleCard" parent="Deck/CardContainer" index="4" instance=ExtResource("3_ppgk2")]
-
-[node name="SampleCard2" parent="Deck/CardContainer" index="5" instance=ExtResource("3_ppgk2")]
-
-[node name="SampleCard3" parent="Deck/CardContainer" index="6" instance=ExtResource("4_2r41h")]
-position = Vector2(86, 496)
-
-[node name="SampleCard4" parent="Deck/CardContainer" index="7" instance=ExtResource("4_2r41h")]
+visible = false
+position = Vector2(135, 1)
 
 [node name="Hand" parent="." instance=ExtResource("2_w7c3h")]
-position = Vector2(560, 502)
+position = Vector2(560, 546)
 
 [node name="Counter" parent="." instance=ExtResource("3_w8frs")]
-position = Vector2(571, 300)
+position = Vector2(556, 344)
+
+[node name="Guest" parent="." instance=ExtResource("5_ppgk2")]
+position = Vector2(486, 129)
+
+[node name="Guest2" parent="." instance=ExtResource("5_ppgk2")]
+position = Vector2(626, 129)
 
 [connection signal="child_entered_tree" from="Hand/CardContainer" to="Hand" method="_on_card_container_child_entered_tree"]
 

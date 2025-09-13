@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1g36ilt3a7my"]
+[gd_scene load_steps=4 format=3 uid="uid://c5dwb35otfa33"]
 
-[ext_resource type="Script" path="res://scripts/map_graph_node.gd" id="1_ix3cq"]
-[ext_resource type="Texture2D" uid="uid://bdhl4d74vpg4k" path="res://assets/sprites/32463.png" id="2_7eh4k"]
+[ext_resource type="Script" uid="uid://do48oh0tmy3ed" path="res://scripts/map_graph_node.gd" id="1_ix3cq"]
+[ext_resource type="Texture2D" uid="uid://bhjxm6e63ndpa" path="res://assets/sprites/32463.png" id="2_7eh4k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mg02n"]
 radius = 28.1603

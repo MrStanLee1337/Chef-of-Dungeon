@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://7lppxslj5h8" path="res://scenes/level_manager.tscn" id="1_2r41h"]
-[ext_resource type="Script" uid="uid://ckgkpo46h3ioy" path="res://scripts/level_manager.gd" id="2_klq6b"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_klq6b"]
 [ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]

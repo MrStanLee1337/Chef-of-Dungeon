@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://wtmclxrux87h"]
 
 [ext_resource type="Script" uid="uid://d1h5ltjsxoe7l" path="res://scripts/deck.gd" id="1_6rnap"]
-[ext_resource type="Texture2D" uid="uid://d3hw216775paa" path="res://assets/sprites/cardback.png" id="2_6rnap"]
+[ext_resource type="Texture2D" uid="uid://d3jdjsqlfwx8y" path="res://assets/sprites/cardback.png" id="2_6rnap"]
 
 [sub_resource type="Gradient" id="Gradient_ktuci"]
 colors = PackedColorArray(0.360784, 0, 0, 1, 0.360784, 0, 0, 1)

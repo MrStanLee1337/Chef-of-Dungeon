@@ -5,11 +5,16 @@ extends Node
 
 func _ready() -> void:
 	currentDeck = {
-		"sample" : 3,
-		"sample2" : 4
+		"onion" : 3,
+		"tomato" : 4,
+		"carrot" : 2,
+		"salad" : 1
 	}
 	
 	cardsPath = {
-		"sample" : "res://scenes/cards/SampleCard.tscn",
-		"sample2" : "res://scenes/cards/SampleCard2.tscn"
-	}
+		"onion" : "res://scenes/cards/onion.tscn",
+		"tomato" : "res://scenes/cards/tomato.tscn",
+		"carrot" : "res://scenes/cards/carrot.tscn",
+		"salad" : "res://scenes/cards/salad.tscn"
+				}
+	

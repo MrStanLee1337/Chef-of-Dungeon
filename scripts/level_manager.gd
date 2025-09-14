@@ -25,9 +25,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			for res in result:
 				if res.collider is Card:
 					var card = res.collider as Card
-					print("trying to feed card %s to guest %s" % [card.name, nowFeedingGuest.name])
-					# Potentially add your feeding logic here and then return
-					# For example: nowFeedingGuest.feed(card)
+					if card.canBeEaten:
+						nowFeedingGuest.feed(card.sustanance)
+						card.queue_free()
 					nowFeedingGuest = null # Reset after feeding
 					get_viewport().set_input_as_handled()
 					return

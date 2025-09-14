@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bboe61q30l3jh"]
 
 [ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_upqyf"]
-[ext_resource type="Texture2D" uid="uid://cokjy88fg1s2u" path="res://assets/sprites/cardfront_tomato.png" id="2_lp35y"]
+[ext_resource type="Texture2D" uid="uid://0e0iyvjjenm5" path="res://assets/sprites/cardfront_salad.png" id="2_lp35y"]
 
 [node name="Card" instance=ExtResource("1_upqyf")]
 canBeEaten = true
+isVegetable = null
 
 [node name="MainSprite" parent="." index="0"]
 texture = ExtResource("2_lp35y")

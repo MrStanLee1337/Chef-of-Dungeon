@@ -11,7 +11,6 @@ func _ready() -> void:
 	myLabel.text = str(hungryness)
 	levelManager = get_tree().get_root().get_node("Level/LevelManager") as LevelManager
 	
-
 func feed(sustanance: int):
 	hungryness -= sustanance
 	if hungryness <= 0:
@@ -20,7 +19,7 @@ func feed(sustanance: int):
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		levelManager.beginFeeding(self)
+		levelManager.begin_feeding(self)
 
 func _process(_delta: float) -> void:
 	if levelManager.nowFeedingGuest == self:

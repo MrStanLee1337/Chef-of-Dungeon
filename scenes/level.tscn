@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqnpinmupdpj5"]
+[gd_scene load_steps=8 format=3 uid="uid://cqnpinmupdpj5"]
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://7lppxslj5h8" path="res://scenes/level_manager.tscn" id="1_2r41h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="5_ppgk2"]
+[ext_resource type="Texture2D" uid="uid://ctxokm1we5rle" path="res://assets/sprites/mixbutton.png" id="7_klq6b"]
 
 [node name="Level" type="Node2D"]
 
@@ -30,7 +31,15 @@ hungryness = 16
 position = Vector2(626, 129)
 hungryness = 10
 
+[node name="MixButton" type="Button" parent="."]
+offset_left = 1023.0
+offset_top = 40.0
+offset_right = 1131.0
+offset_bottom = 148.0
+icon = ExtResource("7_klq6b")
+
 [connection signal="child_entered_tree" from="Hand/CardContainer" to="Hand" method="_on_card_container_child_entered_tree"]
+[connection signal="pressed" from="MixButton" to="LevelManager" method="_on_mix_button_pressed"]
 
 [editable path="Deck"]
 [editable path="Hand"]

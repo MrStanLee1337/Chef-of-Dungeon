@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://8xv0iik31fa5"]
+
+[ext_resource type="Texture2D" uid="uid://ctxokm1we5rle" path="res://assets/sprites/mixbutton.png" id="1_1gk4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ava8"]
+size = Vector2(98, 100)
+
+[node name="HeatButton" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1gk4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8ava8")

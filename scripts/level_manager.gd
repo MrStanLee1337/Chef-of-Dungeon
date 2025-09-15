@@ -4,11 +4,17 @@ class_name LevelManager
 
 var nowFeedingGuest: Guest = null
 var selectedCards: Dictionary
+@onready var targetCounter = get_tree().get_root().get_node("Level/Counter") as Node2D
+
+func clear_selection() -> void:
+	for card in selectedCards.keys():
+		card.lower()
+		selectedCards.erase(card)
 
 func begin_feeding(guest: Guest) -> void:
 	nowFeedingGuest = guest
-	selectedCards.clear()
-
+	clear_selection()
+	
 func try_select(card: Card) -> void:
 	if card in selectedCards.keys():
 		card.lower()
@@ -18,6 +24,7 @@ func try_select(card: Card) -> void:
 		selectedCards[card] = "aboba"
 
 func _unhandled_input(event: InputEvent) -> void:
+	# HANDLE GUEST FEEDING, INTERCEPTS CLICK EVENTS
 	if nowFeedingGuest != null and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var mousePos = get_viewport().get_mouse_position()
 		var spaceState = get_viewport().get_world_2d().direct_space_state
@@ -47,17 +54,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		print("Cancelled feeding guest")
 		get_viewport().set_input_as_handled()
 
-func freeIngridients() -> void:
-	selectedCards
+func _counter_has_vacant_spots_or_selected_card() -> bool:
+		var hasSlot: bool = targetCounter.has_vacant_spots()
+		if not hasSlot:
+			for card in selectedCards:
+				if card.onTable:
+					hasSlot = true
+		return hasSlot
 
 func _on_mix_button_pressed() -> void:
-	var counter = get_tree().get_root().get_node("Level/Counter")
-	var hasSlot: bool = counter.has_vacant_spots()
-	if not hasSlot:
-		for card in selectedCards:
-			if card.onTable:
-				hasSlot = true
-	if not hasSlot:
+	if not _counter_has_vacant_spots_or_selected_card():
 		pass
 	
 	if selectedCards.size() >= 3:
@@ -70,8 +76,13 @@ func _on_mix_button_pressed() -> void:
 			for card in selectedCards.keys():
 				sustananceSum += card.sustanance
 				card.queue_free()
-			selectedCards.clear()
 			var saladNode : Card = preload("res://scenes/cards/salad.tscn").instantiate()
 			saladNode.sustanance = sustananceSum
-			counter.add_child(saladNode)
-	
+			targetCounter.add_child(saladNode)
+	clear_selection()
+
+func _on_heat_button_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_slice_button_pressed() -> void:
+	pass # Replace with function body.

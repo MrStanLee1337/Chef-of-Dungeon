@@ -5,7 +5,6 @@
 
 [node name="Card" instance=ExtResource("1_upqyf")]
 canBeEaten = true
-isVegetable = null
 
 [node name="MainSprite" parent="." index="0"]
 texture = ExtResource("2_lp35y")

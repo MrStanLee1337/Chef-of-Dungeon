@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqnpinmupdpj5"]
+[gd_scene load_steps=10 format=3 uid="uid://cqnpinmupdpj5"]
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://7lppxslj5h8" path="res://scenes/level_manager.tscn" id="1_2r41h"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="5_ppgk2"]
 [ext_resource type="Texture2D" uid="uid://ctxokm1we5rle" path="res://assets/sprites/mixbutton.png" id="7_klq6b"]
+[ext_resource type="Texture2D" uid="uid://btvuid8kq07qb" path="res://assets/sprites/heatbutton.png" id="8_8c41q"]
+[ext_resource type="Texture2D" uid="uid://ff4fowtgc5of" path="res://assets/sprites/slicebutton.png" id="9_olg7q"]
 
 [node name="Level" type="Node2D"]
 
@@ -38,8 +40,24 @@ offset_right = 1131.0
 offset_bottom = 148.0
 icon = ExtResource("7_klq6b")
 
+[node name="HeatButton" type="Button" parent="."]
+offset_left = 1023.0
+offset_top = 174.0
+offset_right = 1131.0
+offset_bottom = 282.0
+icon = ExtResource("8_8c41q")
+
+[node name="SliceButton" type="Button" parent="."]
+offset_left = 1023.0
+offset_top = 314.0
+offset_right = 1131.0
+offset_bottom = 422.0
+icon = ExtResource("9_olg7q")
+
 [connection signal="child_entered_tree" from="Hand/CardContainer" to="Hand" method="_on_card_container_child_entered_tree"]
 [connection signal="pressed" from="MixButton" to="LevelManager" method="_on_mix_button_pressed"]
+[connection signal="pressed" from="HeatButton" to="LevelManager" method="_on_heat_button_pressed"]
+[connection signal="pressed" from="SliceButton" to="LevelManager" method="_on_slice_button_pressed"]
 
 [editable path="Deck"]
 [editable path="Hand"]

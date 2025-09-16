@@ -8,6 +8,7 @@ class Recipe:
 		ingredients = p_ingredients
 		result = p_result
 
+var playerName : String = "Косипоша"
 @export var currentDeck : Dictionary
 @export var cardsPath : Dictionary
 @export var mix_recipes : Dictionary
@@ -15,6 +16,9 @@ class Recipe:
 @export var slice_recipes : Dictionary
 
 func _ready() -> void:
+	
+	
+	
 	currentDeck = {
 		"onion" : 3,
 		"tomato" : 4,

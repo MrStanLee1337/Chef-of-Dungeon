@@ -40,7 +40,7 @@ signal made_choice(choice: String, message: String)
 @onready var text_boxes_content = $TextBox/HBoxContainer/VBoxContainer
 @onready var text_boxes_name = $TextBox/HBoxContainer/VBoxContainer/Label
 @onready var text_boxes_message = $TextBox/HBoxContainer/VBoxContainer/Label2
-@onready var text_boxes_avatar = $TextBox/HBoxContainer/TextureRect
+@onready var text_boxes_avatar = $HBoxContainer/TextureRect
 
 # Functional Variables
 var separator = ";"
@@ -102,7 +102,7 @@ func advance_message():
 	message_position += 1
 
 	if message_position >= messages.size():
-		queue_free()
+		self.get_parent().queue_free()
 		return
 
 	var dialogue = messages[message_position].split(separator)
@@ -114,6 +114,9 @@ func advance_message():
 		_show_character_dialogue(name_, name_color_, avatar_, text, 1)
 	elif speaker == "2":
 		_show_character_dialogue(name__, name_color__, avatar__, text, 2)
+	elif speaker == "3":
+		# текст без подписи
+		_show_character_dialogue("", Color.TRANSPARENT, null, text, 1)
 
 	if typing_animation:
 		type_message(time)
@@ -150,6 +153,9 @@ func _show_character_dialogue(name_text: String, color: Color, avatar: Texture2D
 		subtitles_message.text = localized_message
 		if typing_animation:
 			subtitles_message.visible_ratio = 0
+		text_boxes_avatar.texture = avatar
+		if swap_speaker:
+			_adjust_avatar_layout(speaker_id)
 	else:
 		text_boxes_name.modulate = color
 		text_boxes_name.text = localized_name
@@ -169,6 +175,14 @@ func _adjust_textbox_layout(speaker_id: int):
 		text_boxes_avatar.move_to_front()
 		text_boxes_name.set_h_size_flags(Control.SIZE_SHRINK_END)
 		text_boxes_message.set_horizontal_alignment(HORIZONTAL_ALIGNMENT_RIGHT)
+		
+func _adjust_avatar_layout(speaker_id: int):
+	if speaker_id == 1:
+		text_boxes_content.move_to_front()
+		text_boxes_avatar.layout_direction = 2 #left
+	else:
+		text_boxes_avatar.move_to_front()
+		text_boxes_avatar.layout_direction = 3 #right
 
 func auto_advance_message():
 	advance_message()

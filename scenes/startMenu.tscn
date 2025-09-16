@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://83um8f1deol4"]
+
+[ext_resource type="Script" uid="uid://cjdo0c87oawp2" path="res://scripts/start_menu.gd" id="1_m0w26"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m0w26")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 154.0
+offset_right = 785.0
+offset_bottom = 292.0
+text = "Начать"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 468.0
+offset_right = 710.0
+offset_bottom = 537.0
+text = "Выйти"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

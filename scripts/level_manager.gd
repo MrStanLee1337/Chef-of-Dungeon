@@ -8,6 +8,9 @@ var selectedCards: Dictionary
 @onready var mixButton = get_tree().get_root().get_node("Level/MixButton") as Button
 @onready var heatButton = get_tree().get_root().get_node("Level/HeatButton") as Button
 @onready var sliceButton = get_tree().get_root().get_node("Level/SliceButton") as Button
+@onready var deck = get_tree().get_root().get_node("Level/Deck") as Deck
+@export var perTurnCardBonuses: Array[int] = []
+var currentTurn: int = 0
 
 func _ready() -> void:
 	selectedCards = {}
@@ -35,6 +38,8 @@ func clear_selection() -> void:
 	_update_tool_buttons()
 
 func begin_feeding(guest: Guest) -> void:
+	if (guest.fedThisTurn):
+		return
 	nowFeedingGuest = guest
 	clear_selection()
 
@@ -115,3 +120,13 @@ func spawn_result(recipe_name: String) -> void:
 		var card_scene = load(Global.cardsPath[recipe_name])
 		var card = card_scene.instantiate()
 		targetCounter.add_child(card)
+
+func _on_skip_button_pressed() -> void:
+	if currentTurn < perTurnCardBonuses.size():
+		for i in range(perTurnCardBonuses[currentTurn]):
+			deck.draw_card()
+	# otherwise use last element of perTurnCardBonuses
+	else: 
+		for i in range(perTurnCardBonuses[perTurnCardBonuses.size() - 1]):
+			deck.draw_card()
+	currentTurn += 1

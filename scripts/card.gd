@@ -8,7 +8,7 @@ var _isHiddenInDeck: bool = false
 @export var sustanance: int
 @export var isVegetable: bool = false
 var onCounter: bool = false
-
+		
 func set_hidden_in_deck(inDeck: bool) -> void:
 	_isHiddenInDeck = inDeck
 	visible = not inDeck
@@ -17,11 +17,10 @@ func get_hidden_in_deck() -> bool:
 	return _isHiddenInDeck
 
 func raise() -> void:
-	find_child("MainSprite").position.y -= 10
+	find_child("MainSprite").y_offset -= 10
 
 func lower()-> void:
-	find_child("MainSprite").position.y += 10
-
+	find_child("MainSprite").y_offset += 10
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

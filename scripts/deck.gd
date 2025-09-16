@@ -26,7 +26,10 @@ func _ready() -> void:
 func draw_card() -> void:
 	if _myCards.size() == 0:
 		return
-	var card = _myCards[0]
-	_targetCardContainer.add_child(card)
-	card.set_hidden_in_deck(false)
+	var card = _myCards[0] as Card
 	_myCards.erase(card)
+	card.set_hidden_in_deck(false)
+	add_child(card)
+	await get_tree().process_frame
+	remove_child(card)
+	_targetCardContainer.add_child(card)

@@ -6,6 +6,7 @@
 [node name="Card" instance=ExtResource("1_upqyf")]
 recipeName = "salad"
 canBeEaten = true
+sustanance = 20
 
 [node name="MainSprite" parent="." index="0"]
 texture = ExtResource("2_lp35y")

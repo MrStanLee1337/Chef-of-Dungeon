@@ -29,9 +29,9 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 func _process(_delta: float) -> void:
 	if levelManager.nowFeedingGuest == self:
-		mySprite.position.y = -10
+		mySprite.y_offset = -10
 	else:
-		mySprite.position.y = 0
+		mySprite.y_offset = 0
 	if fedThisTurn:
 		mySprite.modulate = Color(1,1,1,0.5)
 	else:

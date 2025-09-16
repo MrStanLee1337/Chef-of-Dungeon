@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bba5b35g84ot8"]
+[gd_scene load_steps=6 format=3 uid="uid://bba5b35g84ot8"]
 
 [ext_resource type="Script" uid="uid://8jdign51hmqa" path="res://scripts/guest.gd" id="1_my1ra"]
 [ext_resource type="Texture2D" uid="uid://c4a1j04m7q558" path="res://assets/sprites/guest_avatar.png" id="2_21oj1"]
+[ext_resource type="Script" uid="uid://d4cs7v3vrueq4" path="res://scripts/card_sprite.gd" id="3_jsc3r"]
+[ext_resource type="Texture2D" uid="uid://d3hw216775paa" path="res://assets/sprites/cardback.png" id="4_xgyym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg30u"]
 size = Vector2(124, 175)
@@ -17,6 +19,8 @@ shape = SubResource("RectangleShape2D_kg30u")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_21oj1")
+script = ExtResource("3_jsc3r")
+cardbackTexture = ExtResource("4_xgyym")
 
 [node name="Label" type="Label" parent="Sprite2D"]
 offset_left = -22.0

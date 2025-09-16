@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cokjy88fg1s2u" path="res://assets/sprites/cardfront_tomato.png" id="2_xfqt5"]
 
 [node name="Card" instance=ExtResource("1_dwf32")]
+recipeName = "tomato"
 canBeEaten = true
 sustanance = 4
 isVegetable = true

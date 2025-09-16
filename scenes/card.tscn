@@ -1,20 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc11moisdebte"]
+[gd_scene load_steps=6 format=3 uid="uid://dc11moisdebte"]
 
 [ext_resource type="Script" uid="uid://chhsffslpabg7" path="res://scripts/card.gd" id="1_6u4wf"]
 [ext_resource type="Texture2D" uid="uid://ct3llyu45hnqh" path="res://assets/sprites/cardfront.png" id="2_ktuci"]
+[ext_resource type="Script" uid="uid://d4cs7v3vrueq4" path="res://scripts/card_sprite.gd" id="3_ktuci"]
+[ext_resource type="Texture2D" uid="uid://d3hw216775paa" path="res://assets/sprites/cardback.png" id="4_kg30u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg30u"]
 size = Vector2(125, 176)
 
 [node name="Card2" type="Area2D"]
 script = ExtResource("1_6u4wf")
-canBeEaten = null
-sustanance = null
-isVegetable = null
 
 [node name="MainSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ktuci")
+script = ExtResource("3_ktuci")
+cardbackTexture = ExtResource("4_kg30u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)

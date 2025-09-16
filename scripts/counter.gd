@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Counter
+
 var _myslots: Array[CardSlot] = []
 
 func _ready() -> void:

@@ -5,16 +5,44 @@ class_name LevelManager
 var nowFeedingGuest: Guest = null
 var selectedCards: Dictionary
 @onready var targetCounter = get_tree().get_root().get_node("Level/Counter") as Node2D
+@onready var mixButton = get_tree().get_root().get_node("Level/MixButton") as Button
+@onready var heatButton = get_tree().get_root().get_node("Level/HeatButton") as Button
+@onready var sliceButton = get_tree().get_root().get_node("Level/SliceButton") as Button
+@onready var deck = get_tree().get_root().get_node("Level/Deck") as Deck
+@export var perTurnCardBonuses: Array[int] = []
+var currentTurn: int = 0
+
+func _ready() -> void:
+	selectedCards = {}
+	mixButton.disabled = true
+	heatButton.disabled = true
+	sliceButton.disabled = true
+
+func _update_tool_buttons() -> void:
+	var ingredients = []
+	for card in selectedCards:
+		ingredients.append(card.recipeName)
+	
+	var canMix = Global.check_recipe(ingredients, Global.mix_recipes) != null
+	var canHeat = Global.check_recipe(ingredients, Global.heat_recipes) != null
+	var canSlice = Global.check_recipe(ingredients, Global.slice_recipes) != null
+	
+	mixButton.disabled = not canMix
+	heatButton.disabled = not canHeat
+	sliceButton.disabled = not canSlice
 
 func clear_selection() -> void:
 	for card in selectedCards.keys():
 		card.lower()
 		selectedCards.erase(card)
+	_update_tool_buttons()
 
 func begin_feeding(guest: Guest) -> void:
+	if (guest.fedThisTurn):
+		return
 	nowFeedingGuest = guest
 	clear_selection()
-	
+
 func try_select(card: Card) -> void:
 	if card in selectedCards.keys():
 		card.lower()
@@ -22,6 +50,7 @@ func try_select(card: Card) -> void:
 	else:
 		card.raise()
 		selectedCards[card] = "aboba"
+	_update_tool_buttons()
 
 func _unhandled_input(event: InputEvent) -> void:
 	# HANDLE GUEST FEEDING, INTERCEPTS CLICK EVENTS
@@ -62,27 +91,42 @@ func _counter_has_vacant_spots_or_selected_card() -> bool:
 					hasSlot = true
 		return hasSlot
 
-func _on_mix_button_pressed() -> void:
-	if not _counter_has_vacant_spots_or_selected_card():
-		pass
+func _process_recipe(recipe_type: Dictionary) -> void:
+	if _counter_has_vacant_spots_or_selected_card() == false:
+		clear_selection()
+		return
 	
-	if selectedCards.size() >= 3:
-		var isSalad : bool = true
-		for card in selectedCards.keys():
-			if not card.isVegetable:
-				isSalad = false
-		if isSalad:
-			var sustananceSum : int = 4
-			for card in selectedCards.keys():
-				sustananceSum += card.sustanance
-				card.queue_free()
-			var saladNode : Card = preload("res://scenes/cards/salad.tscn").instantiate()
-			saladNode.sustanance = sustananceSum
-			targetCounter.add_child(saladNode)
-	clear_selection()
+	var ingredients = []
+	for card in selectedCards:
+		ingredients.append(card.recipeName)
+	
+	var recipe = Global.check_recipe(ingredients, recipe_type)
+	if recipe:
+		for card in selectedCards:
+			card.queue_free()
+		clear_selection()
+		spawn_result(recipe.result)
+
+func _on_mix_button_pressed() -> void:
+	_process_recipe(Global.mix_recipes)
 
 func _on_heat_button_pressed() -> void:
-	pass # Replace with function body.
+	_process_recipe(Global.heat_recipes)
 
 func _on_slice_button_pressed() -> void:
-	pass # Replace with function body.
+	_process_recipe(Global.slice_recipes)
+
+func spawn_result(recipe_name: String) -> void:
+		var card_scene = load(Global.cardsPath[recipe_name])
+		var card = card_scene.instantiate()
+		targetCounter.add_child(card)
+
+func _on_skip_button_pressed() -> void:
+	if currentTurn < perTurnCardBonuses.size():
+		for i in range(perTurnCardBonuses[currentTurn]):
+			deck.draw_card()
+	# otherwise use last element of perTurnCardBonuses
+	else: 
+		for i in range(perTurnCardBonuses[perTurnCardBonuses.size() - 1]):
+			deck.draw_card()
+	currentTurn += 1

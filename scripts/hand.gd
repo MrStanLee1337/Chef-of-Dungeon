@@ -12,7 +12,7 @@ func _on_card_container_child_entered_tree(node: Node) -> void:
 	if node is Card:
 		_myCards.append(node)
 		arrange_cards()
-
+	
 func _on_card_container_child_exiting_tree(node: Node) -> void:
 	if node is Card:
 		_myCards.erase(node)
@@ -38,6 +38,6 @@ func arrange_cards() -> void:
 	
 	# Position each card
 	for i in range(_myCards.size()):
-		var card = _myCards[i]
+		var card = _myCards[i] as Card
 		var target_pos = Vector2(start_x + (i * (card_width + current_spacing)), 0)
 		card.position = target_pos

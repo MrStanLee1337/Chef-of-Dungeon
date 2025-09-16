@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b78dl6glgknvb" path="res://assets/sprites/cardfront_carrot.png" id="2_t4a3l"]
 
 [node name="Card" instance=ExtResource("1_jsy1e")]
+recipeName = "carrot"
 canBeEaten = true
 sustanance = 4
 isVegetable = true

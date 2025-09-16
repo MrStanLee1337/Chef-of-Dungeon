@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var _myCardContainer: Node
 @export var _targetCardContainer: Node
 
 var _myCards: Array = []

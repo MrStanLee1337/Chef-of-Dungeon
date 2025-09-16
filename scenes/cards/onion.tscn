@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://buooo34qqcofm" path="res://assets/sprites/cardfront_onion.png" id="2_xj2um"]
 
 [node name="Card" instance=ExtResource("1_g34kl")]
+recipeName = "onion"
 canBeEaten = true
 sustanance = 1
 isVegetable = true

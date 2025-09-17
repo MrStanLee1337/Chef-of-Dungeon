@@ -42,6 +42,9 @@ signal made_choice(choice: String, message: String)
 @onready var text_boxes_message = $TextBox/HBoxContainer/VBoxContainer/Label2
 @onready var text_boxes_avatar = $HBoxContainer/TextureRect
 
+signal dialog_completed(after_level_path : String)
+var after_level_path : String
+
 # Functional Variables
 var separator = ";"
 var messages: PackedStringArray = []
@@ -102,6 +105,7 @@ func advance_message():
 	message_position += 1
 
 	if message_position >= messages.size():
+		emit_signal("dialog_completed", after_level_path)
 		self.get_parent().queue_free()
 		return
 

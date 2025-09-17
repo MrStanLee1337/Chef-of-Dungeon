@@ -3,7 +3,9 @@ extends Node2D
 class_name MapGraphNode
 
 @export var node_id: String = "node_1"
-@export var connected_nodes: Array[MapGraphNode] = [] 
+@export var connected_nodes: Array[MapGraphNode] = []
+@export var dialogue_path : String
+@export var after_level_path : String
 
 var player : PlayerPawn
 

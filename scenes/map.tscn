@@ -12,17 +12,18 @@
 position = Vector2(673, 871)
 connected_nodes = [NodePath("../MapGraphNode2"), NodePath("../MapGraphNode3")]
 
-[node name="MapGraphNode2" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
+[node name="MapGraphNode2" parent="Graph" instance=ExtResource("1_4xfga")]
 position = Vector2(812, 606)
-connected_nodes = [NodePath("../MapGraphNode4")]
 
 [node name="MapGraphNode3" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(905, 924)
-connected_nodes = [NodePath("../MapGraphNode4")]
+connected_nodes = [NodePath("../MapGraphNode4"), NodePath("../MapGraphNode7")]
+dialogue_path = "res://scenes/dialogues/enterance.tscn"
+after_level_path = "tutorial"
 
 [node name="MapGraphNode4" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1047, 766)
-connected_nodes = [NodePath("../MapGraphNode5"), NodePath("../MapGraphNode6"), NodePath("../MapGraphNode7")]
+connected_nodes = [NodePath("../MapGraphNode5"), NodePath("../MapGraphNode6")]
 
 [node name="MapGraphNode5" parent="Graph" instance=ExtResource("1_4xfga")]
 position = Vector2(1038, 602)
@@ -30,8 +31,9 @@ position = Vector2(1038, 602)
 [node name="MapGraphNode6" parent="Graph" instance=ExtResource("1_4xfga")]
 position = Vector2(1245, 775)
 
-[node name="MapGraphNode7" parent="Graph" instance=ExtResource("1_4xfga")]
+[node name="MapGraphNode7" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1146, 919)
+connected_nodes = [NodePath("../MapGraphNode6")]
 
 [node name="PlayerPawn" parent="." node_paths=PackedStringArray("current_node") instance=ExtResource("2_paxxb")]
 position = Vector2(-123, 86)

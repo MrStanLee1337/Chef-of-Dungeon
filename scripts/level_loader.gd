@@ -49,14 +49,23 @@ func load_level(level_id: String):
 
 	# Запускаем авто-диалог если есть
 	if level_data["auto_dialog"] != "":
-		start_auto_dialog(level_data["auto_dialog"])
+		start_auto_dialog(level_data["auto_dialog"], "")
 	return true
 
 # Запуск авто-диалога
-func start_auto_dialog(dialog_path: String):
+func start_auto_dialog(dialog_path: String, after_level_path: String):
 	var scene_resource = load(dialog_path)
 	var new_scene = scene_resource.instantiate()
+	
 	get_tree().root.add_child(new_scene)
+	await get_tree().process_frame
+	var dialogue_manager = new_scene.get_node("dialogue_manager")
+	dialogue_manager.dialog_completed.connect(_on_dialog_completed)
+	dialogue_manager.after_level_path = after_level_path
+
+func _on_dialog_completed(level_path : String):
+	if level_path != "":
+		load_main_level(level_path)
 
 # Публичные методы для удобства
 func load_global_map():

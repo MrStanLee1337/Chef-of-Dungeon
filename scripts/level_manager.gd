@@ -9,6 +9,7 @@ var selectedCards: Dictionary
 @onready var heatButton = get_tree().get_root().get_node("Level/HeatButton") as Button
 @onready var sliceButton = get_tree().get_root().get_node("Level/SliceButton") as Button
 @onready var deck = get_tree().get_root().get_node("Level/Deck") as Deck
+@onready var guests = get_tree().get_root().get_node("Level/Guests") as Node2D
 @export var perTurnCardBonuses: Array[int] = []
 var currentTurn: int = 0
 
@@ -17,6 +18,10 @@ func _ready() -> void:
 	mixButton.disabled = true
 	heatButton.disabled = true
 	sliceButton.disabled = true
+	
+func _process(delta: float) -> void:
+	if guests.get_child_count() == 0:
+		LevelLoader.load_global_map()
 
 func _update_tool_buttons() -> void:
 	var ingredients = []

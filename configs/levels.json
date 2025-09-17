@@ -1,6 +1,10 @@
 {
 	"tutorial": {
-	  "scene_path": "res://scenes/level.tscn",
-	  "auto_dialog": "res://scenes/dialogues/enterance.tscn"
+		"scene_path": "res://scenes/level.tscn",
+		"auto_dialog": "res://scenes/dialogues/enterance.tscn"
+	},
+	"global_map": {
+		"scene_path": "res://scenes/map.tscn",
+		"auto_dialog": ""
 	}
 }

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0h36ixs3ynh1"]
+[gd_scene load_steps=6 format=3 uid="uid://d0h36ixs3ynh1"]
 
 [ext_resource type="Script" uid="uid://darjbmetu48cs" path="res://scripts/enterance.gd" id="1_6myfl"]
 [ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="2_gfy0x"]
+[ext_resource type="Texture2D" uid="uid://dlidqoi1cg7cc" path="res://assets/sprites/Луффи.png" id="3_gfy0x"]
 [ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="3_iv64x"]
+[ext_resource type="Texture2D" uid="uid://c6f2t342wvw7r" path="res://assets/sprites/Повар2.png" id="3_tnhnx"]
 
 [node name="Enterance" type="Control"]
 layout_mode = 3
@@ -14,6 +16,9 @@ grow_vertical = 2
 script = ExtResource("1_6myfl")
 
 [node name="dialogue_manager" parent="." instance=ExtResource("2_gfy0x")]
+avatar_ = ExtResource("3_tnhnx")
+name__ = "Луффи"
+avatar__ = ExtResource("3_gfy0x")
 
 [node name="dialogue" parent="dialogue_manager" instance=ExtResource("3_iv64x")]
 messages = ["2;Приветствую вас, мастер ножей и половника, меня зовут Луффи.;2", "2;Кстааааати, ты знаешь, что произошло??;2", "1;Привет, а что произошло?;2", "2;Нууу в общем-то когда я гулял там наверху, то появились какие-то большие летающие блюдца и они перекрасили всю планету.;4", "2;Деревья теперь красные, земля голубая и так далее. Но еще они всю еду переделали.;2", "1;Что значит переделали?;2", "2;Ну теперь нету ни помидоров, ни моркови…;2", "1;Как это нету, а куда делось?;2", "2;Никуда не делось, просто они изменились.. До неузнаваемости..;2", "2; И еще, как только начали происходить изменения, то находиться наверху с каждой минутой становится все невыносимее и вот я залез поглубже под землю и нашел тебя.;4", "2;Ты же повар, да? Ну это видно по твоим кухонным принадлежностям.;2", "1;Да я повар. А если жить наверху нельзя и еда изменилась, то что нам делать?;2", "2;Не волнуйся! Фрукты и овощи, которые появились, может и изменились внешне, но их все равно можно приготовить и съесть, правда не все.. ;4", "2;Давай попробуем что-то приготовить?;2"]

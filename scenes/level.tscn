@@ -1,67 +1,79 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqnpinmupdpj5"]
+[gd_scene load_steps=12 format=3 uid="uid://cqnpinmupdpj5"]
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://7lppxslj5h8" path="res://scenes/level_manager.tscn" id="1_2r41h"]
+[ext_resource type="Texture2D" uid="uid://blmas14qd3g2v" path="res://assets/sprites/Стол Фон.png" id="1_t1rx8"]
 [ext_resource type="Script" uid="uid://ckgkpo46h3ioy" path="res://scripts/level_manager.gd" id="2_klq6b"]
 [ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="5_ppgk2"]
-[ext_resource type="Texture2D" uid="uid://ctxokm1we5rle" path="res://assets/sprites/mixbutton.png" id="7_klq6b"]
-[ext_resource type="Texture2D" uid="uid://btvuid8kq07qb" path="res://assets/sprites/heatbutton.png" id="8_8c41q"]
-[ext_resource type="Texture2D" uid="uid://ff4fowtgc5of" path="res://assets/sprites/slicebutton.png" id="9_olg7q"]
-[ext_resource type="Texture2D" uid="uid://crluxdlqimonc" path="res://assets/sprites/skipbutton.png" id="10_olg7q"]
+[ext_resource type="Texture2D" uid="uid://bf2uy10omc5re" path="res://assets/sprites/mixbutton.png" id="7_klq6b"]
+[ext_resource type="Texture2D" uid="uid://idv72aaknr3n" path="res://assets/sprites/heatbutton.png" id="8_8c41q"]
+[ext_resource type="Texture2D" uid="uid://cpwrn0fjyt5hw" path="res://assets/sprites/slicebutton.png" id="9_olg7q"]
+[ext_resource type="Texture2D" uid="uid://4b8bql55lnvq" path="res://assets/sprites/skipbutton.png" id="10_olg7q"]
 
 [node name="Level" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(1.2499999, 1.0546875)
+texture = ExtResource("1_t1rx8")
+centered = false
 
 [node name="LevelManager" parent="." instance=ExtResource("1_2r41h")]
 script = ExtResource("2_klq6b")
 perTurnCardBonuses = Array[int]([5, 3, 2])
 
 [node name="Deck" parent="." node_paths=PackedStringArray("_targetCardContainer") instance=ExtResource("1_2q6dc")]
-position = Vector2(86, 540)
+position = Vector2(298, 920)
 _targetCardContainer = NodePath("../Hand/CardContainer")
 
 [node name="Hand" parent="." instance=ExtResource("2_w7c3h")]
-position = Vector2(560, 546)
+position = Vector2(956, 934)
 
 [node name="Counter" parent="." instance=ExtResource("3_w8frs")]
-position = Vector2(556, 344)
-
-[node name="Guest" parent="." instance=ExtResource("5_ppgk2")]
-position = Vector2(486, 129)
-hungryness = 16
-
-[node name="Guest2" parent="." instance=ExtResource("5_ppgk2")]
-position = Vector2(626, 129)
-hungryness = 10
+position = Vector2(952, 689)
 
 [node name="MixButton" type="Button" parent="."]
-offset_left = 1023.0
-offset_top = 40.0
-offset_right = 1131.0
-offset_bottom = 148.0
+offset_left = 1691.0
+offset_top = 217.0
+offset_right = 1799.0
+offset_bottom = 325.0
 icon = ExtResource("7_klq6b")
 
 [node name="HeatButton" type="Button" parent="."]
-offset_left = 1023.0
-offset_top = 174.0
-offset_right = 1131.0
-offset_bottom = 282.0
+offset_left = 1693.0
+offset_top = 400.0
+offset_right = 1801.0
+offset_bottom = 508.0
 icon = ExtResource("8_8c41q")
 
 [node name="SliceButton" type="Button" parent="."]
-offset_left = 1023.0
-offset_top = 314.0
-offset_right = 1131.0
-offset_bottom = 422.0
+offset_left = 1695.0
+offset_top = 567.0
+offset_right = 1803.0
+offset_bottom = 675.0
 icon = ExtResource("9_olg7q")
 
 [node name="SkipButton" type="Button" parent="."]
-offset_left = 1022.0
-offset_top = 447.0
-offset_right = 1130.0
-offset_bottom = 555.0
+offset_left = 1694.0
+offset_top = 739.0
+offset_right = 1802.0
+offset_bottom = 847.0
 icon = ExtResource("10_olg7q")
+
+[node name="Guests" type="Node2D" parent="."]
+
+[node name="Guest" parent="Guests" instance=ExtResource("5_ppgk2")]
+position = Vector2(834, 410)
+hungryness = 16
+
+[node name="Guest2" parent="Guests" instance=ExtResource("5_ppgk2")]
+position = Vector2(1092, 415)
+hungryness = 10
 
 [connection signal="child_entered_tree" from="Hand/CardContainer" to="Hand" method="_on_card_container_child_entered_tree"]
 [connection signal="pressed" from="MixButton" to="LevelManager" method="_on_mix_button_pressed"]

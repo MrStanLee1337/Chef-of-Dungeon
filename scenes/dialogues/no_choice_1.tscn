@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://chxrij13q7arh"]
+
+[ext_resource type="Script" uid="uid://828mpvjxlujy" path="res://scenes/dialogues/no_choice_1.gd" id="1_be33n"]
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_m7wk3"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_be33n"]
+
+[node name="NoChoice1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_be33n")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("1_m7wk3")]
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_be33n")]
+messages = ["1;Вы понемногу выбираетесь из под земли, чтобы лицезреть на новый мир. Едва выглянув, вас ослепляет свет и вы отказываетесь от этой идеи. Вам повезло, что вы остались целы.;6"]

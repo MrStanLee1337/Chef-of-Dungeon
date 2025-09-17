@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cunuirvpfnt71"]
+
+[ext_resource type="Script" uid="uid://dp6736f48vlp2" path="res://scenes/dialogues/choice_2.gd" id="1_lobhd"]
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_tpyn4"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_lobhd"]
+
+[node name="Choice2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lobhd")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("1_tpyn4")]
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_lobhd")]
+messages = ["3;К вам подбегает маленький зверек и круглыми сияющими глазами смотрит на вас пристальным взглядом. Он явно просит кушать..;6;4;Вот держи, кушай на здоровье(Отдать ему случайный продукт).;Ничего я тебе не дам и не проси."]

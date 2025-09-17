@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b35uboqde21gr"]
+
+[ext_resource type="Script" uid="uid://cxl5mu0bh3501" path="res://scenes/dialogues/sirotki.gd" id="1_mhgui"]
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="2_snjbe"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="3_35sfo"]
+
+[node name="Sirotki" type="Node2D"]
+script = ExtResource("1_mhgui")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("2_snjbe")]
+name_ = "Дети-сироты"
+name_color_ = Color(0.98174804, 0.6098344, 0.5011114, 1)
+name__ = "Косипошка"
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("3_35sfo")]
+messages = ["1;Здравствуйте, дяденька, не могли бы вы нас покормить, мы гуляли вместе с семьей, как вдруг.. Как вдруг все начало меняться.. Мы не можем объяснить, что именно произошло, мы просто побежали.. И вот мы здесь, мы хотим кушать..;6", "2;Да, конечно, я вас покормлю.;2"]

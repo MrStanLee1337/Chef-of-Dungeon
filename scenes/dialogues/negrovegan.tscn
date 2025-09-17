@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8wah5tlg6dw7"]
+
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_ijp76"]
+[ext_resource type="Script" uid="uid://c8e8wdjeq05ga" path="res://scenes/dialogues/negrovegan.gd" id="1_wnrql"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_wnrql"]
+
+[node name="Negrovegan" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wnrql")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("1_ijp76")]
+name_ = "Негр-вегетерианец"
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_wnrql")]
+messages = ["1;Хеллоу, стренджер. Ай эм приехал в ваш город, потому что люблю путешст-путшест-путешествовать. И вдруг воздух стал такой… дремучий и сухой, а свет на улице стал еще сильнее, что оставаться на улице стало невыносимо. Я уже много часов не ел, не могли бы вы покормить меня?;8", "2;Сейчас я организую обед! ;2"]

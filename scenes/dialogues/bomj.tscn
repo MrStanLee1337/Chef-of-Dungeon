@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjabnbsikbveh"]
+
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_8k8ic"]
+[ext_resource type="Script" uid="uid://cnamixgst7wot" path="res://scenes/dialogues/bomj.gd" id="1_cegc6"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_cegc6"]
+
+[node name="Bomj" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cegc6")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("1_8k8ic")]
+name_ = "Нищий"
+name__ = "Ко"
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_cegc6")]
+messages = ["1;Добрый день, уважаемый. Я вижу вы хорошо обращаетесь с ножами и другими кухонными принадлежностями, не могли бы вы накормить меня, я уже много дней бродяжничаю, а вот с последними событиями даже на поверхность не выйти, чтобы найти себе пропитание...;10", "1", "2;Дайте мне пару минут и я вас хорошенечко покормлю.;3"]

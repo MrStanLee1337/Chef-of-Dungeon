@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://i5m7mnqn37rv"]
+
+[ext_resource type="Script" uid="uid://b136ihyy6jjj1" path="res://scripts/no_choice_2.gd" id="1_f8api"]
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="2_qy4h8"]
+[ext_resource type="Texture2D" uid="uid://dlidqoi1cg7cc" path="res://assets/sprites/Луффи.png" id="3_kdkq0"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="4_x1w0l"]
+
+[node name="NoChoice2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f8api")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("2_qy4h8")]
+name_ = "Луффи"
+avatar_ = ExtResource("3_kdkq0")
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("4_x1w0l")]
+messages = ["3;Вы проиграли;2;4;Конец;Конец"]
+
+[connection signal="made_choice" from="dialogue_manager" to="." method="_on_dialogue_manager_made_choice"]

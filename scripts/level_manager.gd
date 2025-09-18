@@ -10,6 +10,7 @@ var selectedCards: Dictionary
 @onready var sliceButton = get_tree().get_root().get_node("Level/SliceButton") as Button
 @onready var deck = get_tree().get_root().get_node("Level/Deck") as Deck
 @onready var guests = get_tree().get_root().get_node("Level/Guests") as Node2D
+@onready var hand = get_tree().get_root().get_node("Level/Hand/CardContainer") as Node2D
 @export var perTurnCardBonuses: Array[int] = []
 var currentTurn: int = 0
 
@@ -95,6 +96,7 @@ func _counter_has_vacant_spots_or_selected_card() -> bool:
 				if card.onCounter:
 					hasSlot = true
 		return hasSlot
+		
 
 func _process_recipe(recipe_type: Dictionary, mix : bool = false) -> void:
 	if _counter_has_vacant_spots_or_selected_card() == false:
@@ -146,3 +148,10 @@ func _on_skip_button_pressed() -> void:
 		for i in range(perTurnCardBonuses[perTurnCardBonuses.size() - 1]):
 			deck.draw_card()
 	currentTurn += 1
+	
+	await get_tree().process_frame
+	print(targetCounter.get_child_count())
+	print(hand.get_child_count())
+	if not targetCounter.has_cards() and hand.get_child_count() == 0:
+		LevelLoader.start_auto_dialog("res://scenes/dialogues/gamover.tscn", "")
+	

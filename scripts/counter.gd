@@ -16,6 +16,12 @@ func has_vacant_spots() -> bool:
 		if not slot.occupied():
 			return true
 	return false
+	
+func has_cards() -> bool:
+	for slot in _myslots:
+		if slot.occupied():
+			return true
+	return false
 
 func _on_child_entered_tree(node: Node) -> void:
 	if node is Card and node.get_parent() == self:

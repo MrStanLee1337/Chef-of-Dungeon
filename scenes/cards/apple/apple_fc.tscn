@@ -9,3 +9,6 @@ canBeEaten = true
 
 [node name="MainSprite" parent="." index="0"]
 texture = ExtResource("2_vp6m3")
+
+[node name="Name" parent="MainSprite" index="0"]
+text = "Яблозень"

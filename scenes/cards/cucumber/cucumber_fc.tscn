@@ -10,3 +10,20 @@ sustanance = 1
 
 [node name="MainSprite" parent="." index="0"]
 texture = ExtResource("2_o1ogi")
+
+[node name="Name" parent="MainSprite" index="0"]
+visible = false
+
+[node name="Name2" type="Label" parent="MainSprite" index="2"]
+offset_left = -433.3333
+offset_top = 191.66666
+offset_right = 474.99994
+offset_bottom = 700.0
+theme_override_colors/font_color = Color(0.9137255, 0.85882354, 0.45882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 131
+text = "Марсианский огурец"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

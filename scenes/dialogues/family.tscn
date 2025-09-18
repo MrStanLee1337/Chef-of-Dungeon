@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://odg5eby4g686"]
+[gd_scene load_steps=5 format=3 uid="uid://cjpjcl21e76bg"]
 
-[ext_resource type="Script" uid="uid://kppnnyuw75t7" path="res://scenes/dialogues/family.gd" id="1_0ivtp"]
+[ext_resource type="Script" uid="uid://kppnnyuw75t7" path="res://scripts/family.gd" id="1_0ivtp"]
 [ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_55ahp"]
 [ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_0ivtp"]
+[ext_resource type="Texture2D" uid="uid://br5712spknkcc" path="res://assets/sprites/Повар без фона.png" id="3_7nww2"]
 
 [node name="Family" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ script = ExtResource("1_0ivtp")
 
 [node name="dialogue_manager" parent="." instance=ExtResource("1_55ahp")]
 name_ = "Семья Любергов"
+avatar__ = ExtResource("3_7nww2")
 
 [node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_0ivtp")]
 messages = ["1;Здравствуйте, Мистер! Вы уже знаете, что произошло? Такое ужасное событие для всего человечества!! Мы тут семьей укрываемся, а еды с собой совсем не осталось. Не могли бы вы поделиться едой, хотя бы с нашими детьми…;10", "2;Не волнуйтесь, еды на всех хватит.;3"]

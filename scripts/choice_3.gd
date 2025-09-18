@@ -8,3 +8,5 @@ func _ready() -> void:
 func _on_dialogue_manager_made_choice(choice: String, message: String) -> void:
 	if(choice == "Пожарить случайный продукт"):
 		$dialogue_manager.start("dialogue2")
+		Global.currentDeck["dusa"] -= 1
+		Global.currentDeck["dusa_f"] = 1

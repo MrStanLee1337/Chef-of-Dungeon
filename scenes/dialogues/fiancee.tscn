@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qcr5sx8j8nfm"]
+[gd_scene load_steps=5 format=3 uid="uid://cjpc1e7m4stb1"]
 
 [ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_55e5k"]
-[ext_resource type="Script" uid="uid://dkcvev5j2y283" path="res://scenes/dialogues/fiancee.gd" id="1_p5o3y"]
+[ext_resource type="Script" uid="uid://dkcvev5j2y283" path="res://scripts/fiancee.gd" id="1_p5o3y"]
 [ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_p5o3y"]
+[ext_resource type="Texture2D" uid="uid://br5712spknkcc" path="res://assets/sprites/Повар без фона.png" id="3_5oitj"]
 
 [node name="Fiancee" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ script = ExtResource("1_p5o3y")
 
 [node name="dialogue_manager" parent="." instance=ExtResource("1_55e5k")]
 name_ = "Супружеская пара"
+avatar__ = ExtResource("3_5oitj")
 
 [node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_p5o3y")]
 messages = ["1;Боже мой, мы тут не одни, смотри дорогая, я же говорил, мы не единственные кто спасся от пришедшей напасти.;8", "2;Я повар и приготовлю вам еду наилучшим образом! ;3", "1; Спасибо! А то мы как-то пытались есть что-то похожее на морковку и есть захотелось лишь сильнее.; 9"]

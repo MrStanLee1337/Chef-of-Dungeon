@@ -6,3 +6,6 @@
 recipeName = "mushroom"
 canBeEaten = true
 sustanance = -5
+
+[node name="Name" parent="MainSprite" index="0"]
+text = "Мухогриб"

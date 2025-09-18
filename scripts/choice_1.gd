@@ -8,4 +8,5 @@ func _ready() -> void:
 func _on_dialogue_manager_made_choice(choice: String, message: String) -> void:
 	if(choice == "Посмотреть"):
 		$dialogue_manager.start("dialogue2")
+		Global.currentDeck["apple"] += 1
 		pass

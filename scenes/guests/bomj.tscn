@@ -7,6 +7,7 @@
 [node name="Guest" instance=ExtResource("1_emf6i")]
 position = Vector2(948, 410)
 hungryness = 30
+unfedPenalty = 0
 
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(-1.9999999, -0.99999994)

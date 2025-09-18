@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxanh8mprmgf"]
+[gd_scene load_steps=4 format=3 uid="uid://cxanh8mprmgf"]
 
 [ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="1_glsdv"]
+[ext_resource type="Texture2D" uid="uid://dujn6fqvhu5g6" path="res://assets/sprites/ЛЕНЯ карта.png" id="2_oi8m4"]
+[ext_resource type="Texture2D" uid="uid://e10in7og505k" path="res://assets/sprites/Рубашка карт.png" id="3_22q5a"]
 
 [node name="Guest" instance=ExtResource("1_glsdv")]
 position = Vector2(822, 410)
 hungryness = 15
+unfedPenalty = 0
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_oi8m4")
+cardbackTexture = ExtResource("3_22q5a")

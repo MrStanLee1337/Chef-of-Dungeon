@@ -5,3 +5,4 @@
 [node name="Guest" instance=ExtResource("1_6viig")]
 position = Vector2(881, 410)
 hungryness = 15
+unfedPenalty = 0

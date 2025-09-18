@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://brs53tey22v0d"]
+[gd_scene load_steps=6 format=3 uid="uid://brs53tey22v0d"]
 
 [ext_resource type="Script" uid="uid://cxl5mu0bh3501" path="res://scripts/sirotki.gd" id="1_mhgui"]
 [ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="2_snjbe"]
 [ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="3_35sfo"]
+[ext_resource type="Texture2D" uid="uid://bqyskphrsh52b" path="res://assets/sprites/РОЗАЛЕНЯ.png" id="3_d4n47"]
+[ext_resource type="Texture2D" uid="uid://c6f2t342wvw7r" path="res://assets/sprites/Повар2.png" id="4_nce3k"]
 
 [node name="Sirotki" type="Control"]
 layout_mode = 3
@@ -12,7 +14,9 @@ script = ExtResource("1_mhgui")
 [node name="dialogue_manager" parent="." instance=ExtResource("2_snjbe")]
 name_ = "Дети-сироты"
 name_color_ = Color(0.98174804, 0.6098344, 0.5011114, 1)
+avatar_ = ExtResource("3_d4n47")
 name__ = "Косипошка"
+avatar__ = ExtResource("4_nce3k")
 
 [node name="dialogue" parent="dialogue_manager" instance=ExtResource("3_35sfo")]
 messages = ["1;Здравствуйте, дяденька, не могли бы вы нас покормить, мы гуляли вместе с семьей, как вдруг.. Как вдруг все начало меняться.. Мы не можем объяснить, что именно произошло, мы просто побежали.. И вот мы здесь, мы хотим кушать..;6", "2;Да, конечно, я вас покормлю.;2"]

@@ -6,6 +6,7 @@
 
 [node name="Guest" instance=ExtResource("1_2eg6j")]
 position = Vector2(948, 410)
+unfedPenalty = 0
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_35d0u")

@@ -8,7 +8,11 @@ var _isHiddenInDeck: bool = false
 @export var sustanance: int
 @export var isVegetable: bool = false
 var onCounter: bool = false
-		
+
+func _ready() -> void:
+	$MainSprite/Sustanance.text = str(sustanance)
+
+
 func set_hidden_in_deck(inDeck: bool) -> void:
 	_isHiddenInDeck = inDeck
 	visible = not inDeck

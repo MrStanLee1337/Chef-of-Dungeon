@@ -28,7 +28,7 @@ func _update_tool_buttons() -> void:
 	for card in selectedCards:
 		ingredients.append(card.recipeName)
 	
-	var canMix = Global.check_recipe(ingredients, Global.mix_recipes) != null
+	var canMix = Global.check_recipe_mix(ingredients) != null
 	var canHeat = Global.check_recipe(ingredients, Global.heat_recipes) != null
 	var canSlice = Global.check_recipe(ingredients, Global.slice_recipes) != null
 	
@@ -92,7 +92,7 @@ func _counter_has_vacant_spots_or_selected_card() -> bool:
 		var hasSlot: bool = targetCounter.has_vacant_spots()
 		if not hasSlot:
 			for card in selectedCards:
-				if card.onTable:
+				if card.onCounter:
 					hasSlot = true
 		return hasSlot
 
@@ -105,7 +105,11 @@ func _process_recipe(recipe_type: Dictionary, mix : bool = false) -> void:
 	for card in selectedCards:
 		ingredients.append(card.recipeName)
 	
-	var recipe = Global.check_recipe(ingredients, recipe_type)
+	var recipe
+	if mix:
+		recipe = Global.check_recipe_mix(ingredients)
+	else:
+		recipe = Global.check_recipe(ingredients, recipe_type)
 	if recipe:
 		var add_sustanance = 0
 		for card in selectedCards:
@@ -118,7 +122,7 @@ func _process_recipe(recipe_type: Dictionary, mix : bool = false) -> void:
 			spawn_result(recipe.result, 0)
 
 func _on_mix_button_pressed() -> void:
-	_process_recipe(Global.mix_recipes)
+	_process_recipe(Global.mix_recipes, true)
 
 func _on_heat_button_pressed() -> void:
 	_process_recipe(Global.heat_recipes)
@@ -130,6 +134,7 @@ func spawn_result(recipe_name: String, add_sustanance : int) -> void:
 		var card_scene = load(Global.cardsPath[recipe_name])
 		var card = card_scene.instantiate()
 		card.sustanance += add_sustanance
+		card.onCounter = true
 		targetCounter.add_child(card)
 
 func _on_skip_button_pressed() -> void:

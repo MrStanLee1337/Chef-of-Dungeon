@@ -21,6 +21,7 @@ centered = false
 position = Vector2(671, 857)
 node_id = "enter"
 connected_nodes = [NodePath("../MapGraphNode2")]
+dialogue_path = "res://scenes/dialogues/congrats.tscn"
 
 [node name="MapGraphNode2" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(409, 588)
@@ -101,19 +102,14 @@ after_level_path = "married"
 [node name="MapGraphNode17" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1115, 861)
 node_id = "hz4"
-connected_nodes = [NodePath("../MapGraphNode18")]
+connected_nodes = [NodePath("../MapGraphNode1")]
 dialogue_path = "res://scenes/dialogues/no_choice_7.tscn"
 
 [node name="MapGraphNode14" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1085, 673)
 node_id = "hz3"
-connected_nodes = [NodePath("../MapGraphNode18")]
+connected_nodes = [NodePath("../MapGraphNode1")]
 dialogue_path = "res://scenes/dialogues/no_choice_6.tscn"
-
-[node name="MapGraphNode18" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
-position = Vector2(674, 850)
-node_id = "end"
-connected_nodes = [NodePath("../MapGraphNode6")]
 
 [node name="MapGraphNode15" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1362, 735)

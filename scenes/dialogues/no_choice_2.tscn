@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cll58msixjxl0"]
+[gd_scene load_steps=5 format=3 uid="uid://dfb5bby6kkgcr"]
 
-[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_obhat"]
-[ext_resource type="Script" uid="uid://b136ihyy6jjj1" path="res://scenes/dialogues/no_choice_2.gd" id="1_p2n0k"]
-[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_p2n0k"]
-[ext_resource type="Texture2D" uid="uid://dlidqoi1cg7cc" path="res://assets/sprites/Луффи.png" id="3_ywt5f"]
+[ext_resource type="Script" uid="uid://b136ihyy6jjj1" path="res://scripts/no_choice_2.gd" id="1_rdoj4"]
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="2_njkuy"]
+[ext_resource type="Texture2D" uid="uid://dlidqoi1cg7cc" path="res://assets/sprites/Луффи.png" id="3_t3xgl"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="4_pdks7"]
 
 [node name="NoChoice2" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_p2n0k")
+script = ExtResource("1_rdoj4")
 
-[node name="dialogue_manager" parent="." instance=ExtResource("1_obhat")]
+[node name="dialogue_manager" parent="." instance=ExtResource("2_njkuy")]
 name_ = "Луффи"
-avatar_ = ExtResource("3_ywt5f")
+avatar_ = ExtResource("3_t3xgl")
 
-[node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_p2n0k")]
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("4_pdks7")]
 messages = ["3;Пройдя мимо земляной стены вы останавливаетесь, замечая множество маленьких рисунков выскребанных камнем. Рисунки не отражают чего-то конкретного, однако смотря на них вы вспоминаете о своем доме.
 ;11", "1; Ну что ты встал, пошли вершить великие дела!;6"]

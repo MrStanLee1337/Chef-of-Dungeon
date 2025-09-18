@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw216j4eysg54"]
+[gd_scene load_steps=4 format=3 uid="uid://dw216j4eysg54"]
 
 [ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="1_bakli"]
+[ext_resource type="Texture2D" uid="uid://c0o7fnn7v0b1t" path="res://assets/sprites/роман карта.png" id="2_g667w"]
+[ext_resource type="Texture2D" uid="uid://e10in7og505k" path="res://assets/sprites/Рубашка карт.png" id="3_dg0cg"]
 
 [node name="Guest" instance=ExtResource("1_bakli")]
 position = Vector2(731, 409)
 hungryness = 25
 unfedPenalty = 0
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_g667w")
+cardbackTexture = ExtResource("3_dg0cg")

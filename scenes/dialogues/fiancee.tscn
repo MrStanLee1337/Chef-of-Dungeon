@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjpc1e7m4stb1"]
+[gd_scene load_steps=6 format=3 uid="uid://cjpc1e7m4stb1"]
 
 [ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_55e5k"]
 [ext_resource type="Script" uid="uid://dkcvev5j2y283" path="res://scripts/fiancee.gd" id="1_p5o3y"]
 [ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_p5o3y"]
 [ext_resource type="Texture2D" uid="uid://br5712spknkcc" path="res://assets/sprites/Повар без фона.png" id="3_5oitj"]
+[ext_resource type="Texture2D" uid="uid://b5sgdy855i4pm" path="res://assets/sprites/безфонапара.png" id="3_i4o12"]
 
 [node name="Fiancee" type="Control"]
 layout_mode = 3
@@ -12,6 +13,7 @@ script = ExtResource("1_p5o3y")
 
 [node name="dialogue_manager" parent="." instance=ExtResource("1_55e5k")]
 name_ = "Супружеская пара"
+avatar_ = ExtResource("3_i4o12")
 avatar__ = ExtResource("3_5oitj")
 
 [node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_p5o3y")]

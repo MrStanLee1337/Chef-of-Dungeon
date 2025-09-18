@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://e10in7og505k" path="res://assets/sprites/Рубашка карт.png" id="2_6rnap"]
 
 [sub_resource type="Gradient" id="Gradient_ktuci"]
-offsets = PackedFloat32Array(0, 0.42424244, 1)
-colors = PackedColorArray(0.360784, 0, 0, 1, 0.15839821, 0.05435174, 0.011895214, 1, 0.360784, 0, 0, 1)
+offsets = PackedFloat32Array(0.42424244)
+colors = PackedColorArray(0.18146026, 0.102020405, 0.014860526, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gdbsr"]
 gradient = SubResource("Gradient_ktuci")

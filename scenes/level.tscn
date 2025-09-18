@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqnpinmupdpj5"]
+[gd_scene load_steps=12 format=3 uid="uid://cqnpinmupdpj5"]
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://7lppxslj5h8" path="res://scenes/level_manager.tscn" id="1_2r41h"]
@@ -6,10 +6,11 @@
 [ext_resource type="Script" uid="uid://ckgkpo46h3ioy" path="res://scripts/level_manager.gd" id="2_klq6b"]
 [ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
-[ext_resource type="Texture2D" uid="uid://bf2uy10omc5re" path="res://assets/sprites/mixbutton.png" id="7_klq6b"]
-[ext_resource type="Texture2D" uid="uid://idv72aaknr3n" path="res://assets/sprites/heatbutton.png" id="8_8c41q"]
-[ext_resource type="Texture2D" uid="uid://cpwrn0fjyt5hw" path="res://assets/sprites/slicebutton.png" id="9_olg7q"]
-[ext_resource type="Texture2D" uid="uid://4b8bql55lnvq" path="res://assets/sprites/skipbutton.png" id="10_olg7q"]
+[ext_resource type="Texture2D" uid="uid://bxa60hwi7o1i3" path="res://assets/sprites/скатерть.png" id="4_t1rx8"]
+[ext_resource type="Texture2D" uid="uid://6lhei713vwcp" path="res://assets/sprites/МИКС.png" id="8_t1rx8"]
+[ext_resource type="Texture2D" uid="uid://q1r3rw1866dy" path="res://assets/sprites/Пожарить.png" id="9_t1rx8"]
+[ext_resource type="Texture2D" uid="uid://b62ixfl3o721f" path="res://assets/sprites/Нарезать.png" id="10_8iemx"]
+[ext_resource type="Texture2D" uid="uid://bj0sdek02og6x" path="res://assets/sprites/кнопка следующий ход_п.png" id="11_t1rx8"]
 
 [node name="Level" type="Node2D"]
 
@@ -26,6 +27,11 @@ centered = false
 script = ExtResource("2_klq6b")
 perTurnCardBonuses = Array[int]([5, 3, 2])
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(973, 580)
+texture = ExtResource("4_t1rx8")
+
 [node name="Deck" parent="." node_paths=PackedStringArray("_targetCardContainer") instance=ExtResource("1_2q6dc")]
 position = Vector2(298, 920)
 _targetCardContainer = NodePath("../Hand/CardContainer")
@@ -41,28 +47,33 @@ offset_left = 1691.0
 offset_top = 217.0
 offset_right = 1799.0
 offset_bottom = 325.0
-icon = ExtResource("7_klq6b")
+scale = Vector2(0.124, 0.124)
+icon = ExtResource("8_t1rx8")
 
 [node name="HeatButton" type="Button" parent="."]
 offset_left = 1693.0
 offset_top = 400.0
 offset_right = 1801.0
 offset_bottom = 508.0
-icon = ExtResource("8_8c41q")
+scale = Vector2(0.125, 0.125)
+icon = ExtResource("9_t1rx8")
 
 [node name="SliceButton" type="Button" parent="."]
 offset_left = 1695.0
 offset_top = 567.0
 offset_right = 1803.0
 offset_bottom = 675.0
-icon = ExtResource("9_olg7q")
+scale = Vector2(0.125, 0.125)
+icon = ExtResource("10_8iemx")
 
 [node name="SkipButton" type="Button" parent="."]
-offset_left = 1694.0
-offset_top = 739.0
-offset_right = 1802.0
-offset_bottom = 847.0
-icon = ExtResource("10_olg7q")
+offset_left = 1690.0
+offset_top = 722.0
+offset_right = 2515.0
+offset_bottom = 1499.0
+scale = Vector2(0.14, 0.14)
+icon = ExtResource("11_t1rx8")
+icon_alignment = 1
 
 [node name="Guests" type="Node2D" parent="."]
 

@@ -13,6 +13,7 @@ z_index = -2
 script = ExtResource("1_mxh2e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = SubResource("GradientTexture2D_mxh2e")
 region_enabled = true
 region_rect = Rect2(0, 0, 130, 180)

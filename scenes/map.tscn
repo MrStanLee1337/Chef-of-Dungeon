@@ -71,11 +71,13 @@ after_level_path = "negrovegan"
 position = Vector2(1470, 238)
 node_id = "cave"
 connected_nodes = [NodePath("../MapGraphNode13")]
+dialogue_path = "res://scenes/dialogues/no_choice_3.tscn"
 
 [node name="MapGraphNode10" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1262, 344)
 node_id = "bench"
 connected_nodes = [NodePath("../MapGraphNode12")]
+dialogue_path = "res://scenes/dialogues/no_choice_2.tscn"
 
 [node name="MapGraphNode11" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1439, 552)

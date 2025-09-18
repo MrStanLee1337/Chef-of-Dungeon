@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cosbkpilmd330"]
+
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_bohos"]
+[ext_resource type="Script" uid="uid://b2bqtl0kaaxns" path="res://scenes/dialogues/no_choice_4.gd" id="1_cr8do"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_cr8do"]
+
+[node name="NoChoice4" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cr8do")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("1_bohos")]
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_cr8do")]
+messages = ["3;Остановившись, чтобы перекусить, Луффи куда-то уходит.;5", "3;Вернувшись, Луффи подает вам фотокарточку.;5", "1;Красивое?;2;4;Да, действительно, очень красивое.;Давай не будем отвлекаться. "]

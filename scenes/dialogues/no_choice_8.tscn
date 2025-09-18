@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://7lpvrfat7801"]
+
+[ext_resource type="Script" uid="uid://fefmcfuwo7hh" path="res://scenes/dialogues/no_choice_8.gd" id="1_r541q"]
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="2_sbpsg"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="3_pe7n5"]
+
+[node name="NoChoice8" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r541q")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("2_sbpsg")]
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("3_pe7n5")]
+messages = ["3;Сзади мелькнул призрачнай свет, который вы бы и не заметили, если бы Луффи не замер. Свет так манил, что вам пришлось отдернуть Луффи от его иллюзий. Не нужно быть столь беспечным.;8"]

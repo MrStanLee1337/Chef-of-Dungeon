@@ -83,6 +83,7 @@ dialogue_path = "res://scenes/dialogues/no_choice_2.tscn"
 position = Vector2(1439, 552)
 node_id = "hz1"
 connected_nodes = [NodePath("../MapGraphNode15")]
+dialogue_path = "res://scenes/dialogues/no_choice_5.tscn"
 
 [node name="MapGraphNode12" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1457, 386)
@@ -101,11 +102,13 @@ after_level_path = "married"
 position = Vector2(1115, 861)
 node_id = "hz4"
 connected_nodes = [NodePath("../MapGraphNode18")]
+dialogue_path = "res://scenes/dialogues/no_choice_7.tscn"
 
 [node name="MapGraphNode14" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1085, 673)
 node_id = "hz3"
 connected_nodes = [NodePath("../MapGraphNode18")]
+dialogue_path = "res://scenes/dialogues/no_choice_6.tscn"
 
 [node name="MapGraphNode18" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(674, 850)
@@ -123,6 +126,7 @@ after_level_path = "family"
 position = Vector2(1578, 686)
 node_id = "hz2"
 connected_nodes = [NodePath("../MapGraphNode15")]
+dialogue_path = "res://scenes/dialogues/no_choice_8.tscn"
 
 [node name="PlayerPawn" parent="." node_paths=PackedStringArray("current_node") instance=ExtResource("2_paxxb")]
 position = Vector2(-123, 86)

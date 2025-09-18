@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs7335c0y428a"]
+
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_8skh1"]
+[ext_resource type="Script" uid="uid://bgkrm4i81cdym" path="res://scenes/dialogues/no_choice_6.gd" id="1_y1kk1"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_y1kk1"]
+
+[node name="NoChoice6" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_y1kk1")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("1_8skh1")]
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_y1kk1")]
+messages = ["3;Воздух густеет. Дышать становится труднее. Глаза клонят в сон. Вы понимаете, что спать нельзя, не сейчас, вы так близки к концу, что остановиться вы не можете себе позволить.;8"]

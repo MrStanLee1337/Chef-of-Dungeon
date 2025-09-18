@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://haqmw1bcd2qi"]
+
+[ext_resource type="Script" uid="uid://cycgrexbr7h0c" path="res://scenes/dialogues/no_choice_5.gd" id="1_lvp6j"]
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="2_l246e"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="3_l3m84"]
+
+[node name="NoChoice5" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lvp6j")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("2_l246e")]
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("3_l3m84")]
+messages = ["3;В темноте слышится шепот. Лишь через несколько мгновений вы осознаете, что этим шепотом является лишь шелест стеблей друг от друга, растения едва напоминающего папоротник, покрашенного в фиолетовый.;10"]

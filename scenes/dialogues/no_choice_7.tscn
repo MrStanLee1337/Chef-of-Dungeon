@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn2bwc40ple4n"]
+
+[ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_q4lsm"]
+[ext_resource type="Script" uid="uid://dvjj6l8ykqh5e" path="res://scenes/dialogues/no_choice_7.gd" id="1_tbg15"]
+[ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_tbg15"]
+
+[node name="NoChoice7" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tbg15")
+
+[node name="dialogue_manager" parent="." instance=ExtResource("1_q4lsm")]
+
+[node name="dialogue" parent="dialogue_manager" instance=ExtResource("2_tbg15")]
+messages = ["3;Вдруг все содрогнулось. Посыпались мелкие камни и пыль. Над поверхностью послышался гулкий звук. Старого мира больше нет.;7"]

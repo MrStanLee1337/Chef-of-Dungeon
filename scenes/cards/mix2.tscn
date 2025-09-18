@@ -11,3 +11,9 @@ sustanance = 2
 [node name="MainSprite" parent="." index="0"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_5un2g")
+
+[node name="Name" parent="MainSprite" index="0"]
+offset_top = 320.0
+offset_bottom = 791.0
+text = "Неизвестный суп"
+autowrap_mode = 2

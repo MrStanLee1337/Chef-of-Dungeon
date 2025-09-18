@@ -11,3 +11,8 @@ sustanance = 4
 [node name="MainSprite" parent="." index="0"]
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_pll3n")
+
+[node name="Name" parent="MainSprite" index="0"]
+theme_override_font_sizes/font_size = 261
+text = "Неизвестное рагу"
+autowrap_mode = 2

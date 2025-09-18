@@ -9,7 +9,7 @@ class Recipe:
 		result = p_result
 
 @onready var current_node : String = ""
-var playerName : String = "Косипоша"
+var playerName : String = "Повар"
 @export var currentDeck : Dictionary
 @export var cardsPath : Dictionary
 @export var mix_recipes : Dictionary

@@ -88,6 +88,7 @@ connected_nodes = [NodePath("../MapGraphNode15")]
 position = Vector2(1457, 386)
 node_id = "photo"
 connected_nodes = [NodePath("../MapGraphNode13")]
+dialogue_path = "res://scenes/dialogues/no_choice_4.tscn"
 
 [node name="MapGraphNode13" parent="Graph" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("1_4xfga")]
 position = Vector2(1655, 473)

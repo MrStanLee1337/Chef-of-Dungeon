@@ -19,9 +19,11 @@ var playerName : String = "Косипоша"
 func _ready() -> void:
 	currentDeck = {
 		"apple" : 3,
-		"cucumber" : 4,
-		"dusa" : 2,
-		"mushroom" : 1
+		"cucumber" : 3,
+		"dusa" : 3,
+		"mushroom" : 3,
+		"ziga": 3,
+		"luna": 3
 	}
 	
 	cardsPath = {

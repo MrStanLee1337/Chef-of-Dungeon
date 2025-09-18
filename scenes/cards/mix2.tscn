@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://v36dpd7syy4b"]
 
 [ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_rvi3h"]
-[ext_resource type="Texture2D" uid="uid://bopshtg5q05k4" path="res://assets/sprites/блюдо (1).png" id="2_5un2g"]
+[ext_resource type="Texture2D" uid="uid://cofxhb6670afo" path="res://assets/sprites/карта блюда1.png" id="2_rvi3h"]
 
 [node name="Card" instance=ExtResource("1_rvi3h")]
 recipeName = "salad"
@@ -9,11 +9,12 @@ canBeEaten = true
 sustanance = 2
 
 [node name="MainSprite" parent="." index="0"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_5un2g")
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_rvi3h")
 
 [node name="Name" parent="MainSprite" index="0"]
-offset_top = 320.0
-offset_bottom = 791.0
+offset_top = 264.0
+offset_bottom = 735.0
+theme_override_font_sizes/font_size = 116
 text = "Неизвестный суп"
 autowrap_mode = 2

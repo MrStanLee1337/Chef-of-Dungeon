@@ -9,6 +9,9 @@ class_name PlayerPawn
 var is_moving: bool = false
 
 func _ready() -> void:
+	if Global.current_node != "":
+		print(Global.current_node)
+		current_node = get_tree().root.get_node(Global.current_node)
 	global_position = current_node.global_position
 	
 	
@@ -23,6 +26,8 @@ func move_to_node(to : MapGraphNode) -> void:
 			global_position.distance_to(to.global_position) / move_speed)
 		tween.tween_callback(_on_move_completed)
 		current_node = to
+		print(current_node.name)
+		Global.current_node = current_node.get_path()
 		
 		
 func _on_move_completed() -> void:

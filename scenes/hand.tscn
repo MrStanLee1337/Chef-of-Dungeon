@@ -12,6 +12,7 @@ fill_to = Vector2(0, 0)
 metadata/_snap_enabled = true
 
 [node name="Hand" type="Sprite2D"]
+z_index = -2
 texture = SubResource("GradientTexture2D_eyfoh")
 region_enabled = true
 region_rect = Rect2(0, 0, 800, 200)

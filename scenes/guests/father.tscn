@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw216j4eysg54"]
+
+[ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="1_bakli"]
+
+[node name="Guest" instance=ExtResource("1_bakli")]
+position = Vector2(731, 409)
+hungryness = 25

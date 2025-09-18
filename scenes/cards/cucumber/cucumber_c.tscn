@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dybfj03g66uun"]
+
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_birv8"]
+[ext_resource type="Texture2D" uid="uid://dag6ixueqw3gp" path="res://assets/sprites/cucumber/Марс_Дикий_огурец_нарезаный_карта.png" id="2_gnxbo"]
+
+[node name="Card2" instance=ExtResource("1_birv8")]
+recipeName = "cucumber_c"
+canBeEaten = true
+sustanance = -3
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_gnxbo")

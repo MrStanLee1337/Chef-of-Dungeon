@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bba5b35g84ot8"]
+[gd_scene load_steps=8 format=3 uid="uid://bba5b35g84ot8"]
 
 [ext_resource type="Script" uid="uid://8jdign51hmqa" path="res://scripts/guest.gd" id="1_my1ra"]
-[ext_resource type="Texture2D" uid="uid://c4a1j04m7q558" path="res://assets/sprites/guest_avatar.png" id="2_21oj1"]
-[ext_resource type="Script" uid="uid://d4cs7v3vrueq4" path="res://scripts/card_sprite.gd" id="3_jsc3r"]
-[ext_resource type="Texture2D" uid="uid://d3hw216775paa" path="res://assets/sprites/cardback.png" id="4_xgyym"]
+[ext_resource type="Texture2D" uid="uid://dsqd3ckanimsd" path="res://assets/sprites/Повар1.png" id="2_xgyym"]
+[ext_resource type="Script" path="res://scripts/card_sprite.gd" id="3_jsc3r"]
+[ext_resource type="Texture2D" uid="uid://d3jdjsqlfwx8y" path="res://assets/sprites/cardback.png" id="4_xgyym"]
+[ext_resource type="FontFile" uid="uid://cieghnqnqh3ht" path="res://assets/ofont.ru_Galindo.ttf" id="5_534k7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg30u"]
 size = Vector2(124, 175)
+
+[sub_resource type="Theme" id="Theme_534k7"]
+default_font = ExtResource("5_534k7")
 
 [node name="Guest" type="Area2D" node_paths=PackedStringArray("mySprite")]
 script = ExtResource("1_my1ra")
@@ -17,18 +21,21 @@ position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_kg30u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_21oj1")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_xgyym")
 script = ExtResource("3_jsc3r")
 cardbackTexture = ExtResource("4_xgyym")
 
 [node name="Label" type="Label" parent="Sprite2D"]
-offset_left = -22.0
-offset_top = -226.0
-offset_right = 20.0
-offset_bottom = -175.0
-theme_override_font_sizes/font_size = 37
+offset_left = 191.66669
+offset_top = -758.3333
+offset_right = 500.00006
+offset_bottom = -483.33337
+theme = SubResource("Theme_534k7")
+theme_override_colors/font_color = Color(0.9137255, 0.85882354, 0.45882353, 1)
+theme_override_font_sizes/font_size = 186
 text = "99"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

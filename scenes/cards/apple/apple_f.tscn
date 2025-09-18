@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://x54xnebyjsoj"]
+
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_8dwrm"]
+[ext_resource type="Texture2D" uid="uid://ctsig2yusgwwl" path="res://assets/sprites/apple/Яблозень жареный карта.png" id="2_ip2ps"]
+
+[node name="Card2" instance=ExtResource("1_8dwrm")]
+recipeName = "apple_f"
+canBeEaten = true
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_ip2ps")

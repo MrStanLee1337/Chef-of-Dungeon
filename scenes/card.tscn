@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc11moisdebte"]
+[gd_scene load_steps=7 format=3 uid="uid://dc11moisdebte"]
 
 [ext_resource type="Script" uid="uid://chhsffslpabg7" path="res://scripts/card.gd" id="1_6u4wf"]
-[ext_resource type="Texture2D" uid="uid://ct3llyu45hnqh" path="res://assets/sprites/cardfront.png" id="2_ktuci"]
-[ext_resource type="Script" uid="uid://d4cs7v3vrueq4" path="res://scripts/card_sprite.gd" id="3_ktuci"]
-[ext_resource type="Texture2D" uid="uid://d3hw216775paa" path="res://assets/sprites/cardback.png" id="4_kg30u"]
+[ext_resource type="Texture2D" uid="uid://ep3v4r0lwoos" path="res://assets/sprites/Фрукт Мухогриб карта.png" id="2_sy11y"]
+[ext_resource type="Script" path="res://scripts/card_sprite.gd" id="3_ktuci"]
+[ext_resource type="Texture2D" uid="uid://e10in7og505k" path="res://assets/sprites/Рубашка карт.png" id="4_sy11y"]
+[ext_resource type="Theme" uid="uid://bgn0vhfo6y4ou" path="res://assets/card.tres" id="5_sy11y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg30u"]
 size = Vector2(125, 176)
@@ -12,14 +13,49 @@ size = Vector2(125, 176)
 script = ExtResource("1_6u4wf")
 
 [node name="MainSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ktuci")
+z_index = -1
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_sy11y")
 script = ExtResource("3_ktuci")
-cardbackTexture = ExtResource("4_kg30u")
+cardbackTexture = ExtResource("4_sy11y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+z_index = -1
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_kg30u")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("5_sy11y")
+
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 48.0
+offset_right = 54.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.9137255, 0.85882354, 0.45882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Залупа"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sustanance" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -86.0
+offset_right = 56.0
+offset_bottom = -57.0
+theme_override_colors/font_color = Color(0.9137255, 0.85882354, 0.45882353, 1)
+theme_override_colors/font_shadow_color = Color(0.049554713, 0.016576143, 0.019575672, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]

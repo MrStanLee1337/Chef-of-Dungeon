@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://rr382ui3e3gt"]
+
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_fdsdh"]
+
+[node name="Card2" instance=ExtResource("1_fdsdh")]
+recipeName = "mushroom"
+canBeEaten = true
+sustanance = -5

@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bgn0vhfo6y4ou"]
+
+[ext_resource type="FontFile" uid="uid://cieghnqnqh3ht" path="res://assets/ofont.ru_Galindo.ttf" id="1_skrlc"]
+
+[sub_resource type="FontVariation" id="FontVariation_8w5pg"]
+base_font = ExtResource("1_skrlc")
+spacing_glyph = 1
+
+[resource]
+default_font = SubResource("FontVariation_8w5pg")
+default_font_size = 16

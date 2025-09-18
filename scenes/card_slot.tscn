@@ -9,6 +9,7 @@ colors = PackedColorArray(0.180005, 0.180005, 0.180005, 1, 0.122252, 0.122252, 0
 gradient = SubResource("Gradient_fpilx")
 
 [node name="CardSlot" type="Node2D"]
+z_index = -2
 script = ExtResource("1_mxh2e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -44,6 +44,10 @@ func load_level(level_id: String):
 	var new_scene = scene_resource.instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene = new_scene
+	if get_tree().root.get_node("Level") != null:
+		for guest_path in levels_config[level_id]["guests"]:
+			var guest_scene = (load(guest_path) as PackedScene).instantiate()
+			new_scene.get_node("Guests").add_child(guest_scene)
 
 	current_level_id = level_id
 
@@ -54,6 +58,9 @@ func load_level(level_id: String):
 
 # Запуск авто-диалога
 func start_auto_dialog(dialog_path: String, after_level_path: String):
+	print(dialog_path)
+	if dialog_path == null or dialog_path == "":
+		pass
 	var scene_resource = load(dialog_path)
 	var new_scene = scene_resource.instantiate()
 	

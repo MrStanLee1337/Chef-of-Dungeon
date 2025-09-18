@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://de2vx1kbyaoiq"]
+[gd_scene load_steps=4 format=3 uid="uid://dni415i34bpq1"]
 
-[ext_resource type="Script" uid="uid://qdchl6303jk5" path="res://scenes/choice.gd" id="1_8qvna"]
+[ext_resource type="Script" uid="uid://qdchl6303jk5" path="res://scripts/choice.gd" id="1_8qvna"]
 [ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_ycxmd"]
 [ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="2_yhyp7"]
 

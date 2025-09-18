@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxanh8mprmgf"]
+
+[ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="1_glsdv"]
+
+[node name="Guest" instance=ExtResource("1_glsdv")]
+position = Vector2(822, 410)
+hungryness = 15

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmpreaodb0pbf"]
+
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_k40rs"]
+[ext_resource type="Texture2D" uid="uid://caejbwel8b7hj" path="res://assets/sprites/ziga/зигфр нарезаный карта.png" id="2_5lr3s"]
+
+[node name="Card2" instance=ExtResource("1_k40rs")]
+recipeName = "ziga_c"
+canBeEaten = true
+sustanance = 4
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_5lr3s")

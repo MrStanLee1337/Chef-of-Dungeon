@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch38k4kjdm114"]
 
 [ext_resource type="Script" uid="uid://brdc6igj5sawr" path="res://scripts/player_pawn.gd" id="1_gddki"]
-[ext_resource type="Texture2D" uid="uid://d4dm2r77tl3le" path="res://assets/sprites/Drite_South.webp" id="2_hwd6g"]
+[ext_resource type="Texture2D" uid="uid://br5712spknkcc" path="res://assets/sprites/Повар без фона.png" id="2_gddki"]
 
 [node name="PlayerPawn" type="Node2D" groups=["PlayerPawn"]]
 script = ExtResource("1_gddki")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_hwd6g")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_gddki")

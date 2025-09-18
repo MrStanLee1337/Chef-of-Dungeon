@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqxw6s5lj6y7t"]
+[gd_scene load_steps=5 format=3 uid="uid://cnqw20wenal0p"]
 
 [ext_resource type="PackedScene" uid="uid://bmeiv1c8q5tey" path="res://addons/dialogue/scenes/dialogue_manager.tscn" id="1_5p5or"]
-[ext_resource type="Script" uid="uid://eh5kpr0u62km" path="res://scenes/dialogues/choice_3.gd" id="1_djmlm"]
-[ext_resource type="Texture2D" uid="uid://ddipjbf8bjuld" path="res://scenes/dialogues/Луффи.png" id="2_djmlm"]
+[ext_resource type="Script" uid="uid://eh5kpr0u62km" path="res://scripts/choice_3.gd" id="1_djmlm"]
 [ext_resource type="PackedScene" uid="uid://dnrcj1mhyy4b3" path="res://addons/dialogue/scenes/dialogue.tscn" id="3_8577m"]
+[ext_resource type="Texture2D" uid="uid://dlidqoi1cg7cc" path="res://assets/sprites/Луффи.png" id="3_djmlm"]
 
 [node name="Choice3" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ script = ExtResource("1_djmlm")
 
 [node name="dialogue_manager" parent="." instance=ExtResource("1_5p5or")]
 name_ = "Луффи"
-avatar_ = ExtResource("2_djmlm")
+avatar_ = ExtResource("3_djmlm")
 
 [node name="dialogue" parent="dialogue_manager" instance=ExtResource("3_8577m")]
 messages = ["1;Откуда тут костёр? Кто развёл? Давай пожарим что-нибудь!;5;4;Пожарить случайный продукт;Просто отдохнуть у костра"]

@@ -1,10 +1,41 @@
 {
 	"tutorial": {
 		"scene_path": "res://scenes/level.tscn",
-		"auto_dialog": "res://scenes/dialogues/enterance.tscn"
+		"auto_dialog": "res://scenes/dialogues/enterance.tscn",
+		"guests": ["res://scenes/guests/you.tscn"]
 	},
 	"global_map": {
 		"scene_path": "res://scenes/map.tscn",
-		"auto_dialog": ""
+		"auto_dialog": "",
+		"guests": []
+	}, 
+	"bomj": {
+		"scene_path": "res://scenes/level.tscn",
+		"auto_dialog": "",
+		"guests": ["res://scenes/guests/bomj.tscn"]
+	},
+	"sirotki": {
+		"scene_path": "res://scenes/level.tscn",
+		"auto_dialog": "",
+		"guests": ["res://scenes/guests/sirotka1.tscn", "res://scenes/guests/sirotka2.tscn"]
+	},
+	"negrovegan": {
+		"scene_path": "res://scenes/level.tscn",
+		"auto_dialog": "",
+		"guests": ["res://scenes/guests/negrovegan.tscn"]
+	},
+	"married": {
+		"scene_path": "res://scenes/level.tscn",
+		"auto_dialog": "",
+		"guests": ["res://scenes/guests/husband.tscn", "res://scenes/guests/wife.tscn"]
+	},
+	"family": {
+		"scene_path": "res://scenes/level.tscn",
+		"auto_dialog": "",
+		"guests": ["res://scenes/guests/father.tscn", "res://scenes/guests/mom.tscn", "res://scenes/guests/child1.tscn", "res://scenes/guests/child2.tscn"]
+	},
+	"congratulations": {
+		"scene_path": "res://scenes/level.tscn",
+		"auto_dialog": "res://scenes/dialogues/enterance.tscn"
 	}
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqnpinmupdpj5"]
+[gd_scene load_steps=11 format=3 uid="uid://cqnpinmupdpj5"]
 
 [ext_resource type="PackedScene" uid="uid://wtmclxrux87h" path="res://scenes/deck.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://7lppxslj5h8" path="res://scenes/level_manager.tscn" id="1_2r41h"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://ckgkpo46h3ioy" path="res://scripts/level_manager.gd" id="2_klq6b"]
 [ext_resource type="PackedScene" uid="uid://2kkqbb4kxrwm" path="res://scenes/hand.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://cq704ojvc2lv6" path="res://scenes/counter.tscn" id="3_w8frs"]
-[ext_resource type="PackedScene" uid="uid://bba5b35g84ot8" path="res://scenes/guest.tscn" id="5_ppgk2"]
 [ext_resource type="Texture2D" uid="uid://bf2uy10omc5re" path="res://assets/sprites/mixbutton.png" id="7_klq6b"]
 [ext_resource type="Texture2D" uid="uid://idv72aaknr3n" path="res://assets/sprites/heatbutton.png" id="8_8c41q"]
 [ext_resource type="Texture2D" uid="uid://cpwrn0fjyt5hw" path="res://assets/sprites/slicebutton.png" id="9_olg7q"]
@@ -66,14 +65,6 @@ offset_bottom = 847.0
 icon = ExtResource("10_olg7q")
 
 [node name="Guests" type="Node2D" parent="."]
-
-[node name="Guest" parent="Guests" instance=ExtResource("5_ppgk2")]
-position = Vector2(834, 410)
-hungryness = 16
-
-[node name="Guest2" parent="Guests" instance=ExtResource("5_ppgk2")]
-position = Vector2(1092, 415)
-hungryness = 10
 
 [connection signal="child_entered_tree" from="Hand/CardContainer" to="Hand" method="_on_card_container_child_entered_tree"]
 [connection signal="pressed" from="MixButton" to="LevelManager" method="_on_mix_button_pressed"]

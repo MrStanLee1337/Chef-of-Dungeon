@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://rj2gm0le2mu2"]
+
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_4e6wt"]
+[ext_resource type="Texture2D" uid="uid://di2k4dy7ybpdc" path="res://assets/sprites/dusa/КЛУБУЗА нарезаная карта.png" id="2_blbbv"]
+
+[node name="Card2" instance=ExtResource("1_4e6wt")]
+recipeName = "dusa_c"
+canBeEaten = true
+sustanance = 1
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_blbbv")

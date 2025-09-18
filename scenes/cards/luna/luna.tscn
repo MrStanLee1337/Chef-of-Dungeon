@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6qqtug6hve0a"]
+
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_h2nc1"]
+[ext_resource type="Texture2D" uid="uid://b48qmvhmqxyvb" path="res://assets/sprites/luna/Лунослив карта.png" id="2_jfpdk"]
+
+[node name="Card2" instance=ExtResource("1_h2nc1")]
+recipeName = "luna"
+canBeEaten = true
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_jfpdk")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjjmqqbd7rmpk"]
+
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_xhgct"]
+[ext_resource type="Texture2D" uid="uid://qj0k8jgh3ts4" path="res://assets/sprites/mushroom/Нарезаный мухогриб карта.png" id="2_60c0k"]
+
+[node name="Card2" instance=ExtResource("1_xhgct")]
+recipeName = "mushroom_c"
+canBeEaten = true
+sustanance = -4
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_60c0k")

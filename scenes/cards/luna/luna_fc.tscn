@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcroq1vsb3i03"]
+
+[ext_resource type="PackedScene" uid="uid://dc11moisdebte" path="res://scenes/card.tscn" id="1_0w53n"]
+[ext_resource type="Texture2D" uid="uid://dpbkmu1cfe3co" path="res://assets/sprites/luna/Лунослив_нарезаный_жаренный_карта.png" id="2_154f3"]
+
+[node name="Card2" instance=ExtResource("1_0w53n")]
+recipeName = "luna_fc"
+canBeEaten = true
+sustanance = -3
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_154f3")
